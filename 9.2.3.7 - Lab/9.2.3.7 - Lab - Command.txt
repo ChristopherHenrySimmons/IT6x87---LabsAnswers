@@ -1,0 +1,278 @@
+
+% Please answer 'yes' or 'no'.
+Would you like to enter the initial configuration dialog? [
+
+
+Press RETURN to get started!
+
+
+Jan  2 12:00:04.635: %IOS_LICENSE_IMAGE_APPLICATION-6-LICEN = c2900 Next reboot level = ipbasek9 and License = ipbasek
+Jan  2 12:00:04.799: %IOS_LICENSE_IMAGE_APPLICATION-6-LICEN = c2900 Next reboot level = securityk9 and License = secur
+May 21 00:45:44.623: %IFMGR-7-NO_IFINDEX_FILE: Unable to ople No such file or directory
+May 21 00:46:06.811: %VPN_HW-6-INFO_LOC: Crypto engine: onb to: Initialized
+May 21 00:46:06.815: %VPN_HW-6-INFO_LOC: Crypto engine: onb to: Enabled
+May 21 00:46:07.507: %LINK-3-UPDOWN: Interface GigabitEther to down
+May 21 00:46:07.507: %LINK-3-UPDOWN: Interface GigabitEther to down
+May 21 00:46:07.507: %LINK-3-UPDOWN: Interface Serial0/0/0,n
+May 21 00:46:07.511: %LINK-3-UPDOWN: Interface Serial0/0/1,n
+May 21 00:46:08.615: %LINEPROTO-5-UPDOWN: Line protocol on rnet0/0, changed state to down
+May 21 00:46:08.615: %LINEPROTO-5-UPDOWN: Line protocol on rnet0/1, changed state to down
+May 21 00:46:08.615: %LINEPROTO-5-UPDOWN: Line protocol on , changed state to down
+May 21 00:46:08.615: %LINEPROTO-5-UPDOWN: Line protocol on , changed state to down
+May 21 00:46:09.459: %SYS-6-STARTUP_CONFIG_IGNORED: System  is ignored based on the configuration register setting.
+May 21 00:50:15.639: %LINK-5-CHANGED: Interface GigabitEthee to administratively down
+May 21 00:50:17.391: %LINK-5-CHANGED: Interface Embedded-Seged state to administratively down
+May 21 00:50:17.391: %LINK-5-CHANGED: Interface GigabitEthee to administratively down
+May 21 00:50:17.391: %LINK-5-CHANGED: Interface Serial0/0/0ministratively down
+May 21 00:50:17.391: %LINK-5-CHANGED: Interface Serial0/0/1ministratively down
+May 21 00:50:18.427: %LINEPROTO-5-UPDOWN: Line protocol on rvice-Engine0/0, changed state to down
+May 21 00:50:18.887: %SYS-5-RESTART: System restarted --
+Cisco IOS Software, C2900 Software (C2900-UNIVERSALK9-M), VEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2012 by Cisco Systems, Inc.
+Compiled Tue 04-Sep-12 16:37 by prod_rel_team
+May 21 00:50:18.891: %SNMP-5-COLDSTART: SNMP agent on host a cold start
+May 21 00:50:19.511: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+May 21 00:50:19.511: %CRYPTO-6-GDOI_ON_OFF: GDOI is OFF
+May 21 00:50:19.511: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+May 21 00:50:19.511: %CRYPTO-6-GDOI_ON_OFF: GDOI is OFF
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/
+Router(config)#hostname R1
+R1(config)#hostname Gateway
+Gateway(config)#
+% Please answer 'yes' or 'no'.
+Would you like to enter the initial configuration dialog? [
+
+
+Press RETURN to get started!
+
+
+Jan  2 12:00:04.627: %IOS_LICENSE_IMAGE_APPLICATION-6-LICEN = c2900 Next reboot level = ipbasek9 and License = ipbasek
+Jan  2 12:00:04.787: %IOS_LICENSE_IMAGE_APPLICATION-6-LICEN = c2900 Next reboot level = securityk9 and License = secur
+May 21 13:11:36.623: %IFMGR-7-NO_IFINDEX_FILE: Unable to ople No such file or directory
+May 21 13:11:58.755: %VPN_HW-6-INFO_LOC: Crypto engine: onb to: Initialized
+May 21 13:11:58.759: %VPN_HW-6-INFO_LOC: Crypto engine: onb to: Enabled
+May 21 13:11:59.451: %LINK-3-UPDOWN: Interface GigabitEther to down
+May 21 13:11:59.451: %LINK-3-UPDOWN: Interface GigabitEther to down
+May 21 13:11:59.451: %LINK-3-UPDOWN: Interface Serial0/1/0,n
+May 21 13:11:59.451: %LINK-3-UPDOWN: Interface Serial0/1/1,n
+May 21 13:12:00.559: %LINEPROTO-5-UPDOWN: Line protocol on rnet0/0, changed state to down
+May 21 13:12:00.559: %LINEPROTO-5-UPDOWN: Line protocol on rnet0/1, changed state to down
+May 21 13:12:00.559: %LINEPROTO-5-UPDOWN: Line protocol on , changed state to down
+May 21 13:12:00.559: %LINEPROTO-5-UPDOWN: Line protocol on , changed state to down
+May 21 13:12:01.403: %SYS-6-STARTUP_CONFIG_IGNORED: System  is ignored based on the configuration register setting.
+May 21 13:18:28.711: %LINK-5-CHANGED: Interface Embedded-Seged state to administratively down
+May 21 13:18:28.711: %LINK-5-CHANGED: Interface GigabitEthee to administratively down
+May 21 13:18:28.711: %LINK-5-CHANGED: Interface GigabitEthee to administratively down
+May 21 13:18:28.711: %LINK-5-CHANGED: Interface Serial0/1/0ministratively down
+May 21 13:18:28.711: %LINK-5-CHANGED: Interface Serial0/1/1ministratively down
+May 21 13:18:29.371: %SYS-5-RESTART: System restarted --
+Cisco IOS Software, C2900 Software (C2900-UNIVERSALK9-M), VEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2012 by Cisco Systems, Inc.
+Compiled Tue 04-Sep-12 16:37 by prod_rel_team
+May 21 13:18:29.375: %SNMP-5-COLDSTART: SNMP agent on host a cold start
+May 21 13:18:29.995: %LINEPROTO-5-UPDOWN: Line protocol on rvice-Engine0/0, changed state to down
+May 21 13:18:29.995: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+May 21 13:18:29.999: %CRYPTO-6-GDOI_ON_OFF: GDOI is OFF
+May 21 13:18:29.999: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+May 21 13:18:29.999: %CRYPTO-6-GDOI_ON_OFF: GDOI is OFF
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/
+Router(config)#hostname ISP
+ISP(config)#
+
+
+         --- System Configuration Dialog ---
+
+Enable secret warning
+----------------------------------
+In order to access the device manager, an enable secret is
+If you enter the initial configuration dialog, you will be le secret
+If you choose not to enter the intial configuration dialog, without setting the enable secret,
+please set an enable secret using the following CLI in conf
+enable secret 0 <cleartext password>
+----------------------------------
+Would you like to enter the initial configuration dialog? [
+Switch>
+*Mar  1 00:08:16.051: %LINK-5-CHANGED: Interface Vlan1, chatratively down
+*Mar  1 00:08:16.060: %LINEPROTO-5-UPDOWN: Line protocol onnged state to downen
+Switch#conft
+Translating "conft"...domain server (255.255.255.255)
+% Unknown command or computer name, or unable to find compu
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/
+Switch(config)#hostname S1
+S1(config)#
+ISP(config)#ip route 209.165.200.224 255.255.255.248 209.16
+ISP(config)#
+Gateway(config)#ip route 0.0.0.0 0.0.0.0 209.165.201.17
+Gateway(config)#access-list 1 permit 192.168.1.0 0.0.0.255
+Gateway(config)#$65.200.225  209.165.200.230 netmask 255.25
+Gateway(config)#ip nat inside source list 1 pool public_acc
+May 21 00:55:57.559: %LINEPROTO-5-UPDOWN: Line protocol on ed state to up
+Gateway(config)#interface g0/1
+Gateway(config-if)#ip nat inside
+Gateway(config-if)#interface s0/0/1
+Gateway(config-if)#ip nat outside
+Gateway(config-if)#do show ip nat statistics
+Total active translations: 0 (0 static, 0 dynamic; 0 extend
+Peak translations: 0
+Outside interfaces:
+  Serial0/0/1
+Inside interfaces:
+  GigabitEthernet0/1
+Hits: 0  Misses: 0
+CEF Translated packets: 0, CEF Punted packets: 0
+Expired translations: 0
+Dynamic mappings:
+-- Inside Source
+[Id: 1] access-list 1 pool public_access refcount 0
+ pool public_access: netmask 255.255.255.248
+        start 209.165.200.225 end 209.165.200.230
+        type generic, total addresses 6, allocated 0 (0%),
+
+Total doors: 0
+Appl doors: 0
+Normal doors: 0
+Queued Packets: 0
+Gateway(config-if)#int s0/0/1
+Gateway(config-if)#no shut
+Gateway(config-if)#
+May 21 00:58:50.103: %LINK-3-UPDOWN: Interface Serial0/0/1,n
+Gateway(config-if)#int g0/1
+Gateway(config-if)#no shut
+Gateway(config-if)#
+May 21 00:59:17.263: %LINK-3-UPDOWN: Interface GigabitEther to down
+May 21 00:59:20.507: %LINK-3-UPDOWN: Interface GigabitEther to up
+May 21 00:59:21.507: %LINEPROTO-5-UPDOWN: Line protocol on rnet0/1, changed state to up
+ISP(config)#int s0/1/0
+ISP(config-if)#no shut
+ISP(config-if)#
+May 21 13:25:52.583: %LINK-3-UPDOWN: Interface Serial0/1/0,
+May 21 13:25:53.583: %LINEPROTO-5-UPDOWN: Line protocol on , changed state to up
+Gateway(config-if)#exit
+Gateway(config)#do show ip nat statistics
+Total active translations: 0 (0 static, 0 dynamic; 0 extend
+Peak translations: 0
+Outside interfaces:
+  Serial0/0/1
+Inside interfaces:
+  GigabitEthernet0/1
+Hits: 0  Misses: 0
+CEF Translated packets: 0, CEF Punted packets: 0
+Expired translations: 0
+Dynamic mappings:
+-- Inside Source
+[Id: 1] access-list 1 pool public_access refcount 0
+ pool public_access: netmask 255.255.255.248
+        start 209.165.200.225 end 209.165.200.230
+        type generic, total addresses 6, allocated 0 (0%),
+
+Total doors: 0
+Appl doors: 0
+Normal doors: 0
+Queued Packets: 0
+Gateway(config)#int g0/1
+Gateway(config-if)#ip add 192.168.1.1 255.255.255.0
+Gateway(config-if)#no shut
+Gateway(config-if)#int s0/0/1
+Gateway(config-if)#ip add 209.165.201.18 255.255.255.252
+Gateway(config-if)#not shut
+                     ^
+% Invalid input detected at '^' marker.
+
+Gateway(config-if)#no shut
+Gateway(config-if)#exit
+Gateway(config)#do show ip nat statistics
+Total active translations: 0 (0 static, 0 dynamic; 0 extend
+Peak translations: 0
+Outside interfaces:
+  Serial0/0/1
+Inside interfaces:
+  GigabitEthernet0/1
+Hits: 0  Misses: 0
+CEF Translated packets: 0, CEF Punted packets: 0
+Expired translations: 0
+Dynamic mappings:
+-- Inside Source
+[Id: 1] access-list 1 pool public_access refcount 0
+ pool public_access: netmask 255.255.255.248
+        start 209.165.200.225 end 209.165.200.230
+        type generic, total addresses 6, allocated 0 (0%),
+
+Total doors: 0
+Appl doors: 0
+Normal doors: 0
+Queued Packets: 0
+Gateway(config)#ip route 0.0.0.0 0.0.0.0 209.165.201.17
+Gateway(config)#access-list 1 permit 192.168.1.0 0.0.0.255
+Gateway(config)#$65.200.225  209.165.200.230 netmask 255.25
+Gateway(config)#ip nat inside source list 1 pool public_acc
+Gateway(config)#ip nat pool public_access 209.165.200.225  209.165.200.230
+% Incomplete command.
+
+Gateway(config)#$65.200.225  209.165.200.230 netmask 255.255.255.248
+Gateway(config)#ip nat inside source list 1 pool public_access overload
+Gateway(config)#interface g0/1
+Gateway(config-if)#ip nat inside
+Gateway(config-if)#interface s0/0/1
+Gateway(config-if)#ip nat outside
+Gateway(config-if)#
+Gateway(config-if)#do show ip nat statistics
+Total active translations: 0 (0 static, 0 dynamic; 0 extended)
+Peak translations: 0
+Outside interfaces:
+  Serial0/0/1
+Inside interfaces:
+  GigabitEthernet0/1
+Hits: 0  Misses: 0
+CEF Translated packets: 0, CEF Punted packets: 0
+Expired translations: 0
+Dynamic mappings:
+-- Inside Source
+[Id: 1] access-list 1 pool public_access refcount 0
+ pool public_access: netmask 255.255.255.248
+        start 209.165.200.225 end 209.165.200.230
+        type generic, total addresses 6, allocated 0 (0%), misses 0
+
+Total doors: 0
+Appl doors: 0
+Normal doors: 0
+Queued Packets: 0
+Gateway(config-if)#do show ip nat translations
+Gateway(config-if)#exit
+Gateway(config)#$209.165.200.225 209.165.200.230 netmask 255.255.255.248
+Gateway(config)#no ip nat inside source list 1 pool public_access overload
+Gateway(config)#
+Gateway(config)#ip nat inside source list 1 interface serial 0/0/1 overload
+Gateway(config)#
+Gateway(config)#show ip nat statistics
+                  ^
+% Invalid input detected at '^' marker.
+
+Gateway(config)#exit
+Gateway#show ip nat statistics
+Total active translations: 0 (0 static, 0 dynamic; 0 extended)
+Peak translations: 0
+Outside interfaces:
+  Serial0/0/1
+Inside interfaces:
+  GigabitEthernet0/1
+Hits: 0  Misses: 0
+CEF Translated packets: 0, CEF Punted packets: 0
+Expired translations: 0
+Dynamic mappings:
+-- Inside Source
+[Id: 2] access-list 1 interface Serial0/0/1 refcount 0
+
+Total doors: 0
+Appl doors: 0
+Normal doors: 0
+Queued Packets: 0
+Gateway#show ip nat translations
+May 21 01:09:55.767: %SYS-5-CONFIG_I: Configured from console by console
+Gateway#

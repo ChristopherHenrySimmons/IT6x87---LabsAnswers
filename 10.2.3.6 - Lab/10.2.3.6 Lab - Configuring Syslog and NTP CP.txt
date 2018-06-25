@@ -1,0 +1,63 @@
+>>>R1
+no ip domain-lookup
+banner motd #
+Unauthorized access is strictly prohibited. #
+Hostname R1
+int g0/1
+ip address 192.168.1.1 255.255.255.0
+int s0/0/0
+clock rate 128000
+
+router rip
+version 2
+no auto-summary
+passive-interface G0/1
+passive-interface VLAN 1
+network 192.168.1.1
+network 192.168.1.11
+
+>>>S1
+no ip domain-lookup
+banner motd #
+Unauthorized access is strictly prohibited. #
+Hostname S1
+VLAN1
+ip address 192.168.1.1 255.255.255.0
+ip default-gateway 192.168.1.1
+
+>>>R1
+
+do show clock
+clock set 9:39:00 05 july 2013
+
+ntp master 5
+ntp server 10.1.1.1
+ntp update-calendar
+do show ntp associations
+
+do show clock
+
+do show run | include timestamp
+
+service timestamps log datetime msec
+logging host 172.16.2.3
+
+do show logging
+
+logging trap ?
+
+logging trap warnings
+logging trap 4
+
+interface lo 0
+no interface lo 0
+
+exit
+
+logging trap informational
+logging trap 6
+
+interface lo 1
+no interface lo 1
+
+

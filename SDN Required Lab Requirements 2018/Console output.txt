@@ -1,0 +1,422 @@
+Welcome to Ubuntu 16.04.4 LTS (GNU/Linux 4.4.0-124-generic i686)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+59 packages can be updated.
+0 updates are security updates.
+
+
+*** System restart required ***
+Last login: Tue Jun  5 13:42:35 2018 from 192.168.107.58
+21600681@Mininet-21600681:~$ sudo apt-get install wireshark
+[sudo] password for 21600681:
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  linux-headers-4.4.0-116 linux-headers-4.4.0-116-generic linux-headers-4.4.0-119 linux-headers-4.4.0-119-generic linux-headers-4.4.0-121
+  linux-headers-4.4.0-121-generic linux-headers-4.4.0-72 linux-headers-4.4.0-72-generic linux-headers-4.4.0-75
+  linux-headers-4.4.0-75-generic linux-image-4.4.0-116-generic linux-image-4.4.0-119-generic linux-image-4.4.0-121-generic
+  linux-image-4.4.0-72-generic linux-image-4.4.0-75-generic linux-image-extra-4.4.0-116-generic linux-image-extra-4.4.0-119-generic
+  linux-image-extra-4.4.0-121-generic linux-image-extra-4.4.0-72-generic linux-image-extra-4.4.0-75-generic
+Use 'sudo apt autoremove' to remove them.
+The following packages will be upgraded:
+  wireshark
+1 upgraded, 0 newly installed, 0 to remove and 54 not upgraded.
+Need to get 38.7 kB of archives.
+After this operation, 0 B of additional disk space will be used.
+Get:1 http://ppa.launchpad.net/wireshark-dev/stable/ubuntu xenial/main i386 wireshark i386 2.4.6-1~16.04.0 [38.7 kB]
+Fetched 38.7 kB in 1s (37.4 kB/s)
+(Reading database ... 337551 files and directories currently installed.)
+Preparing to unpack .../wireshark_2.4.6-1~16.04.0_i386.deb ...
+Unpacking wireshark (2.4.6-1~16.04.0) over (2.4.4-1~16.04.0) ...
+Setting up wireshark (2.4.6-1~16.04.0) ...
+21600681@Mininet-21600681:~$ mn -c
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (Permission denied)
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (Permission denied)
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+21600681@Mininet-21600681:~$ mn --topo=tree,1,3 --mac --controller=remote --switch ovsk,protocols=OpenFlow13
+*** Mininet must run as root.
+21600681@Mininet-21600681:~$ sudo bash
+root@Mininet-21600681:~# mn --topo=tree,1,3 --mac --controller=remote --switch ovsk,protocols=OpenFlow13
+*** Creating network
+*** Adding controller
+Connecting to remote controller at 127.0.0.1:6653
+*** Adding hosts:
+h1 h2 h3
+*** Adding switches:
+s1
+*** Adding links:
+(s1, h1) (s1, h2) (s1, h3)
+*** Configuring hosts
+h1 h2 h3
+*** Starting controller
+c0
+*** Starting 1 switches
+s1 ...
+*** Starting CLI:
+mininet> wireshark &
+*** Unknown command: wireshark &
+mininet> exit
+*** Stopping 1 controllers
+c0
+*** Stopping 3 links
+...
+*** Stopping 1 switches
+s1
+*** Stopping 3 hosts
+h1 h2 h3
+*** Done
+completed in 17.129 seconds
+root@Mininet-21600681:~# wireshark &
+[1] 21527
+root@Mininet-21600681:~# QXcbConnection: Could not connect to display localhost:10.0
+
+[1]+  Aborted                 (core dumped) wireshark
+root@Mininet-21600681:~# wireshark &
+[1] 21529
+root@Mininet-21600681:~# QXcbConnection: Could not connect to display localhost:10.0
+wireshark &
+[2] 21531
+[1]   Aborted                 (core dumped) wireshark
+root@Mininet-21600681:~# QXcbConnection: Could not connect to display localhost:10.0
+
+[2]+  Aborted                 (core dumped) wireshark
+root@Mininet-21600681:~# wireshark &
+[1] 21533
+root@Mininet-21600681:~# QXcbConnection: Could not connect to display localhost:10.0
+
+[1]+  Aborted                 (core dumped) wireshark
+root@Mininet-21600681:~# wireshark &
+[1] 21536
+root@Mininet-21600681:~# QXcbConnection: Could not connect to display localhost:10.0
+
+[1]+  Aborted                 (core dumped) wireshark
+root@Mininet-21600681:~# wireshark &
+[1] 21538
+root@Mininet-21600681:~# wireshark &QXcbConnection: Could not connect to display localhost:10.0
+mn --topo=tree,1,3 --mac
+
+Welcome to Ubuntu 16.04.4 LTS (GNU/Linux 4.4.0-124-generic i686)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+72 packages can be updated.
+0 updates are security updates.
+
+
+*** System restart required ***
+Last login: Tue Jun  5 13:57:23 2018 from 192.168.107.58
+21600681@Mininet-21600681:~$ sudo bash
+[sudo] password for 21600681:
+root@Mininet-21600681:~# exit
+exit
+21600681@Mininet-21600681:~$ cd /home/sdn/valve
+21600681@Mininet-21600681:/home/sdn/valve$ cat valve.yaml-flat
+---
+
+0000000000000001:
+ default:
+  type: untagged
+  vlans: [10]
+21600681@Mininet-21600681:/home/sdn/valve$ cp valve.yaml-flat valve.yaml
+cp: cannot create regular file 'valve.yaml': Permission denied
+21600681@Mininet-21600681:/home/sdn/valve$ sudo bash
+root@Mininet-21600681:/home/sdn/valve# cp valve.yaml-flat value.yaml
+root@Mininet-21600681:/home/sdn/valve#
+
+Last login: Tue Jun 26 09:53:15 2018 from 192.168.107.57
+21600681@Mininet-21600681:~$ ls
+exit  wireshark
+21600681@Mininet-21600681:~$ sudo bash
+[sudo] password for 21600681:
+root@Mininet-21600681:~# quit
+No command 'quit' found, did you mean:
+ Command 'quiz' from package 'bsdgames' (universe)
+ Command 'quot' from package 'quota' (main)
+ Command 'qgit' from package 'qgit' (universe)
+ Command 'luit' from package 'x11-utils' (main)
+ Command 'quilt' from package 'quilt' (universe)
+quit: command not found
+root@Mininet-21600681:~# exit
+exit
+21600681@Mininet-21600681:~$ cd /home/
+21600681@Mininet-21600681:/home$ ls
+21600681  administrator  cosste  sdn  Template18  tester
+21600681@Mininet-21600681:/home$ cd sdn
+21600681@Mininet-21600681:/home/sdn$ ls
+apps       example               floodlight_style_settings.xml  lib          pom.xml    sdn               target
+build.xml  findbugs-exclude.xml  __init__.py                    LICENSE.txt  README.md  setup-eclipse.sh  valve
+debian     floodlight.sh         __init__.pyc                   NOTICE.txt   ryu        src               valve-src
+21600681@Mininet-21600681:/home/sdn$ cd valve
+21600681@Mininet-21600681:/home/sdn/valve$ ls -l
+total 128
+-rw-r--r-- 1 root root  1263 May 10  2017 acl.py
+-rw-r--r-- 1 root root  1226 May 10  2017 acl.pyc
+-rw-r--r-- 1 root root   295 May 10  2017 Dockerfile
+-rw-r--r-- 1 root root  4473 May 10  2017 dp.py
+-rw-r--r-- 1 root root  3189 May 10  2017 dp.pyc
+-rw-r--r-- 1 root root 11379 May 10  2017 LICENSE
+-rw-r--r-- 1 root root  1499 May 10  2017 port.py
+-rw-r--r-- 1 root root  1679 May 10  2017 port.pyc
+-rw-r--r-- 1 root root   576 May 10  2017 README.docker.md
+-rw-r--r-- 1 root root  2950 May 10  2017 README.md
+-rw-r--r-- 1 root root  1164 May 10  2017 util.py
+-rw-r--r-- 1 root root   667 May 10  2017 util.pyc
+-rw-r--r-- 1 root root 20862 May 10  2017 valve.py
+-rw-r--r-- 1 root root 13963 May 10  2017 valve.pyc
+-rw-r--r-- 1 root root   208 Apr  5 13:59 valve.yaml
+-rw-r--r-- 1 root root   689 May 10  2017 valve.yaml-dist
+-rw-r--r-- 1 root root    64 May 10  2017 valve.yaml-flat
+-rw-r--r-- 1 root root   518 May 10  2017 valve.yaml-multiple
+-rw-r--r-- 1 root root   208 May 10  2017 valve.yaml-vlan
+-rw-r--r-- 1 root root  1255 May 10  2017 vlan.py
+-rw-r--r-- 1 root root  1252 May 10  2017 vlan.pyc
+21600681@Mininet-21600681:/home/sdn/valve$
+
+Welcome to Ubuntu 16.04.4 LTS (GNU/Linux 4.4.0-124-generic i686)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+72 packages can be updated.
+0 updates are security updates.
+
+
+*** System restart required ***
+Last login: Tue Jun  5 13:57:23 2018 from 192.168.107.58
+21600681@Mininet-21600681:~$ sudo bash
+[sudo] password for 21600681:
+root@Mininet-21600681:~# exit
+exit
+21600681@Mininet-21600681:~$ cd /home/sdn/valve
+21600681@Mininet-21600681:/home/sdn/valve$ cat valve.yaml-flat
+---
+
+0000000000000001:
+ default:
+  type: untagged
+  vlans: [10]
+21600681@Mininet-21600681:/home/sdn/valve$ cp valve.yaml-flat valve.yaml
+cp: cannot create regular file 'valve.yaml': Permission denied
+21600681@Mininet-21600681:/home/sdn/valve$ sudo bash
+root@Mininet-21600681:/home/sdn/valve# cp valve.yaml-flat value.yaml
+root@Mininet-21600681:/home/sdn/valve# ^C
+root@Mininet-21600681:/home/sdn/valve# mn --topo=tree,1,10 --mac --controller=remote --switch ovsk,protocols=OpenFlow13
+*** Creating network
+*** Adding controller
+Connecting to remote controller at 127.0.0.1:6653
+*** Adding hosts:
+h1 h2 h3 h4 h5 h6 h7 h8 h9 h10
+*** Adding switches:
+s1
+*** Adding links:
+(s1, h1) (s1, h2) (s1, h3) (s1, h4) (s1, h5) (s1, h6) (s1, h7) (s1, h8) (s1, h9) (s1, h10)
+*** Configuring hosts
+h1 h2 h3 h4 h5 h6 h7 h8 h9 h10
+*** Starting controller
+c0
+*** Starting 1 switches
+s1 ...
+*** Starting CLI:
+mininet> dpctl dump-flows -O OpenFlow13
+*** s1 ------------------------------------------------------------------------
+OFPST_FLOW reply (OF1.3) (xid=0x2):
+ cookie=0xbadc15c0, duration=40.818s, table=0, n_packets=3, n_bytes=230, priority=9011,in_port=3,dl_src=00:00:00:00:00:03,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=output:3,output:4
+ cookie=0xbadc15c0, duration=40.795s, table=0, n_packets=6, n_bytes=468, priority=9011,in_port=8,dl_src=00:00:00:00:00:08,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=output:1,output:2,output:5,output:6,output:7,output:8,output:9,output:10
+ cookie=0xbadc15c0, duration=40.745s, table=0, n_packets=3, n_bytes=230, priority=9011,in_port=5,dl_src=00:00:00:00:00:05,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=output:1,output:2,output:5,output:6,output:7,output:8,output:9,output:10
+ cookie=0xbadc15c0, duration=40.722s, table=0, n_packets=6, n_bytes=480, priority=9011,in_port=9,dl_src=00:00:00:00:00:09,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=output:1,output:2,output:5,output:6,output:7,output:8,output:9,output:10
+ cookie=0xbadc15c0, duration=40.681s, table=0, n_packets=3, n_bytes=230, priority=9011,in_port=4,dl_src=00:00:00:00:00:04,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=output:3,output:4
+ cookie=0xbadc15c0, duration=40.597s, table=0, n_packets=3, n_bytes=230, priority=9011,in_port=2,dl_src=00:00:00:00:00:02,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=output:1,output:2,output:5,output:6,output:7,output:8,output:9,output:10
+ cookie=0xbadc15c0, duration=40.418s, table=0, n_packets=5, n_bytes=390, priority=9011,in_port=10,dl_src=00:00:00:00:00:0a,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=output:1,output:2,output:5,output:6,output:7,output:8,output:9,output:10
+ cookie=0xbadc15c0, duration=40.216s, table=0, n_packets=3, n_bytes=230, priority=9011,in_port=7,dl_src=00:00:00:00:00:07,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=output:1,output:2,output:5,output:6,output:7,output:8,output:9,output:10
+ cookie=0xbadc15c0, duration=39.913s, table=0, n_packets=5, n_bytes=390, priority=9011,in_port=6,dl_src=00:00:00:00:00:06,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=output:1,output:2,output:5,output:6,output:7,output:8,output:9,output:10
+ cookie=0xbadc15c0, duration=37.065s, table=0, n_packets=2, n_bytes=140, priority=9011,in_port=1,dl_src=00:00:00:00:00:01,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=output:1,output:2,output:5,output:6,output:7,output:8,output:9,output:10
+ cookie=0xbadc15c0, duration=40.887s, table=0, n_packets=0, n_bytes=0, priority=9000,in_port=1 actions=CONTROLLER:65509,output:1,output:2,output:5,output:6,output:7,output:8,output:9,output:10
+ cookie=0xbadc15c0, duration=40.887s, table=0, n_packets=2, n_bytes=160, priority=9000,in_port=2 actions=CONTROLLER:65509,output:1,output:2,output:5,output:6,output:7,output:8,output:9,output:10
+ cookie=0xbadc15c0, duration=40.887s, table=0, n_packets=2, n_bytes=160, priority=9000,in_port=5 actions=CONTROLLER:65509,output:1,output:2,output:5,output:6,output:7,output:8,output:9,output:10
+ cookie=0xbadc15c0, duration=40.886s, table=0, n_packets=0, n_bytes=0, priority=9000,in_port=6 actions=CONTROLLER:65509,output:1,output:2,output:5,output:6,output:7,output:8,output:9,output:10
+ cookie=0xbadc15c0, duration=40.886s, table=0, n_packets=2, n_bytes=160, priority=9000,in_port=7 actions=CONTROLLER:65509,output:1,output:2,output:5,output:6,output:7,output:8,output:9,output:10
+ cookie=0xbadc15c0, duration=40.886s, table=0, n_packets=1, n_bytes=90, priority=9000,in_port=8 actions=CONTROLLER:65509,output:1,output:2,output:5,output:6,output:7,output:8,output:9,output:10
+ cookie=0xbadc15c0, duration=40.886s, table=0, n_packets=0, n_bytes=0, priority=9000,in_port=9 actions=CONTROLLER:65509,output:1,output:2,output:5,output:6,output:7,output:8,output:9,output:10
+ cookie=0xbadc15c0, duration=40.886s, table=0, n_packets=1, n_bytes=78, priority=9000,in_port=10 actions=CONTROLLER:65509,output:1,output:2,output:5,output:6,output:7,output:8,output:9,output:10
+ cookie=0xbadc15c0, duration=40.886s, table=0, n_packets=2, n_bytes=160, priority=9000,in_port=3 actions=CONTROLLER:65509,output:3,output:4
+ cookie=0xbadc15c0, duration=40.886s, table=0, n_packets=0, n_bytes=0, priority=9000,in_port=4 actions=CONTROLLER:65509,output:3,output:4
+ cookie=0xbadc15c0, duration=40.887s, table=0, n_packets=0, n_bytes=0, priority=0 actions=drop
+mininet> mn --topo=tree,3,2 --mac --controller=remote --switch ovsk,protocols=OpenFlow13
+*** Unknown command: mn --topo=tree,3,2 --mac --controller=remote --switch ovsk,protocols=OpenFlow13
+mininet> dpctl  dump-flows  -O  OpenFlow13
+*** s1 ------------------------------------------------------------------------
+
+^C
+Interrupt
+stopping s1
+^C
+Interrupt
+stopping s1
+
+Last login: Tue Jun 26 09:53:15 2018 from 192.168.107.57
+21600681@Mininet-21600681:~$ ls
+exit  wireshark
+21600681@Mininet-21600681:~$ sudo bash
+[sudo] password for 21600681:
+root@Mininet-21600681:~# quit
+No command 'quit' found, did you mean:
+ Command 'quiz' from package 'bsdgames' (universe)
+ Command 'quot' from package 'quota' (main)
+ Command 'qgit' from package 'qgit' (universe)
+ Command 'luit' from package 'x11-utils' (main)
+ Command 'quilt' from package 'quilt' (universe)
+quit: command not found
+root@Mininet-21600681:~# exit
+exit
+21600681@Mininet-21600681:~$ cd /home/
+21600681@Mininet-21600681:/home$ ls
+21600681  administrator  cosste  sdn  Template18  tester
+21600681@Mininet-21600681:/home$ cd sdn
+21600681@Mininet-21600681:/home/sdn$ ls
+apps       example               floodlight_style_settings.xml  lib          pom.xml    sdn               target
+build.xml  findbugs-exclude.xml  __init__.py                    LICENSE.txt  README.md  setup-eclipse.sh  valve
+debian     floodlight.sh         __init__.pyc                   NOTICE.txt   ryu        src               valve-src
+21600681@Mininet-21600681:/home/sdn$ cd valve
+21600681@Mininet-21600681:/home/sdn/valve$ ls -l
+total 128
+-rw-r--r-- 1 root root  1263 May 10  2017 acl.py
+-rw-r--r-- 1 root root  1226 May 10  2017 acl.pyc
+-rw-r--r-- 1 root root   295 May 10  2017 Dockerfile
+-rw-r--r-- 1 root root  4473 May 10  2017 dp.py
+-rw-r--r-- 1 root root  3189 May 10  2017 dp.pyc
+-rw-r--r-- 1 root root 11379 May 10  2017 LICENSE
+-rw-r--r-- 1 root root  1499 May 10  2017 port.py
+-rw-r--r-- 1 root root  1679 May 10  2017 port.pyc
+-rw-r--r-- 1 root root   576 May 10  2017 README.docker.md
+-rw-r--r-- 1 root root  2950 May 10  2017 README.md
+-rw-r--r-- 1 root root  1164 May 10  2017 util.py
+-rw-r--r-- 1 root root   667 May 10  2017 util.pyc
+-rw-r--r-- 1 root root 20862 May 10  2017 valve.py
+-rw-r--r-- 1 root root 13963 May 10  2017 valve.pyc
+-rw-r--r-- 1 root root   208 Apr  5 13:59 valve.yaml
+-rw-r--r-- 1 root root   689 May 10  2017 valve.yaml-dist
+-rw-r--r-- 1 root root    64 May 10  2017 valve.yaml-flat
+-rw-r--r-- 1 root root   518 May 10  2017 valve.yaml-multiple
+-rw-r--r-- 1 root root   208 May 10  2017 valve.yaml-vlan
+-rw-r--r-- 1 root root  1255 May 10  2017 vlan.py
+-rw-r--r-- 1 root root  1252 May 10  2017 vlan.pyc
+21600681@Mininet-21600681:/home/sdn/valve$ ^C
+21600681@Mininet-21600681:/home/sdn/valve$ ryu-manager --verbose ./valve.py
+loading app ./valve.py
+loading app ryu.controller.ofp_handler
+instantiating app None of DPSet
+creating context dpset
+instantiating app ./valve.py of Valve
+instantiating app ryu.controller.ofp_handler of OFPHandler
+BRICK dpset
+  PROVIDES EventDP TO {'Valve': set(['dpset'])}
+  CONSUMES EventOFPSwitchFeatures
+  CONSUMES EventOFPStateChange
+  CONSUMES EventOFPPortStatus
+BRICK Valve
+  CONSUMES EventDP
+  CONSUMES EventOFPPortStatsReply
+  CONSUMES EventOFPPacketIn
+BRICK ofp_event
+  PROVIDES EventOFPSwitchFeatures TO {'dpset': set(['config'])}
+  PROVIDES EventOFPPortStatsReply TO {'Valve': set(['main'])}
+  PROVIDES EventOFPStateChange TO {'dpset': set(['main', 'dead'])}
+  PROVIDES EventOFPPortStatus TO {'dpset': set(['main'])}
+  PROVIDES EventOFPPacketIn TO {'Valve': set(['main'])}
+  CONSUMES EventOFPPortDescStatsReply
+  CONSUMES EventOFPSwitchFeatures
+  CONSUMES EventOFPPortStatus
+  CONSUMES EventOFPHello
+  CONSUMES EventOFPErrorMsg
+  CONSUMES EventOFPEchoRequest
+  CONSUMES EventOFPEchoReply
+connected socket:<eventlet.greenio.base.GreenSocket object at 0xb61e576c> address:('127.0.0.1', 52900)
+EVENT ofp_event->dpset EventOFPStateChange
+connected socket:<eventlet.greenio.base.GreenSocket object at 0xb61e530c> address:('127.0.0.1', 52902)
+hello ev <ryu.controller.ofp_event.EventOFPHello object at 0xb61e564c>
+move onto config mode
+EVENT ofp_event->dpset EventOFPSwitchFeatures
+switch features ev version=0x4,msg_type=0x6,msg_len=0x20,xid=0xeb73b125L,OFPSwitchFeatures(auxiliary_id=0,capabilities=79,datapath_id=1,n_buffers=256,n_tables=254)
+move onto main mode
+EVENT ofp_event->dpset EventOFPStateChange
+DPSET: register datapath <ryu.controller.controller.Datapath object at 0xb61e506c>
+EVENT dpset->Valve EventDP
+Jun 26 10:06:37 Valve  INFO     dpid:1                Autoconfiguring port:5 based on default config
+Jun 26 10:06:37 Valve  INFO     dpid:1                Autoconfiguring port:6 based on default config
+Jun 26 10:06:37 Valve  INFO     dpid:1                Autoconfiguring port:7 based on default config
+Jun 26 10:06:37 Valve  INFO     dpid:1                Autoconfiguring port:8 based on default config
+Jun 26 10:06:37 Valve  INFO     dpid:1                Autoconfiguring port:9 based on default config
+Jun 26 10:06:37 Valve  INFO     dpid:1                Autoconfiguring port:10 based on default config
+Jun 26 10:06:37 Valve  INFO     dpid:1                Configuring datapath
+Jun 26 10:06:37 Valve  INFO     dpid:1                Configuring vid:10 ports:1(untagged),2(untagged),5(untagged),6(untagged),7(untagged),8(untagged),9(untagged),10(untagged)
+Jun 26 10:06:37 Valve  INFO     dpid:1                Configuring vid:20 ports:3(untagged),4(untagged)
+Jun 26 10:06:37 Valve  INFO     dpid:1                Datapath configured
+EVENT ofp_event->dpset EventOFPPortStatus
+DPSET: A port was modified.(datapath id = 0000000000000001, port number = 4294967294)
+EVENT ofp_event->Valve EventOFPPacketIn
+Jun 26 10:06:37 Valve  INFO     dpid:1                Packet_in src:00:00:00:00:00:03 dst:33:33:00:00:00:16 in_port:3 vid:20
+EVENT ofp_event->Valve EventOFPPacketIn
+Jun 26 10:06:37 Valve  INFO     dpid:1                Packet_in src:00:00:00:00:00:03 dst:33:33:00:00:00:02 in_port:3 vid:20
+EVENT ofp_event->Valve EventOFPPacketIn
+Jun 26 10:06:37 Valve  INFO     dpid:1                Packet_in src:00:00:00:00:00:08 dst:33:33:00:00:00:16 in_port:8 vid:10
+EVENT ofp_event->Valve EventOFPPacketIn
+Jun 26 10:06:37 Valve  INFO     dpid:1                Packet_in src:00:00:00:00:00:05 dst:33:33:00:00:00:16 in_port:5 vid:10
+EVENT ofp_event->Valve EventOFPPacketIn
+Jun 26 10:06:37 Valve  INFO     dpid:1                Packet_in src:00:00:00:00:00:05 dst:33:33:00:00:00:02 in_port:5 vid:10
+EVENT ofp_event->Valve EventOFPPacketIn
+Jun 26 10:06:38 Valve  INFO     dpid:1                Packet_in src:00:00:00:00:00:09 dst:33:33:00:00:00:16 in_port:9 vid:10
+EVENT ofp_event->Valve EventOFPPacketIn
+Jun 26 10:06:38 Valve  INFO     dpid:1                Packet_in src:00:00:00:00:00:04 dst:33:33:00:00:00:16 in_port:4 vid:20
+EVENT ofp_event->Valve EventOFPPacketIn
+Jun 26 10:06:38 Valve  INFO     dpid:1                Packet_in src:00:00:00:00:00:02 dst:33:33:00:00:00:16 in_port:2 vid:10
+EVENT ofp_event->Valve EventOFPPacketIn
+Jun 26 10:06:38 Valve  INFO     dpid:1                Packet_in src:00:00:00:00:00:02 dst:33:33:00:00:00:02 in_port:2 vid:10
+EVENT ofp_event->Valve EventOFPPacketIn
+Jun 26 10:06:38 Valve  INFO     dpid:1                Packet_in src:00:00:00:00:00:0a dst:33:33:ff:00:00:0a in_port:10 vid:10
+EVENT ofp_event->Valve EventOFPPacketIn
+Jun 26 10:06:38 Valve  INFO     dpid:1                Packet_in src:00:00:00:00:00:07 dst:33:33:00:00:00:16 in_port:7 vid:10
+EVENT ofp_event->Valve EventOFPPacketIn
+Jun 26 10:06:38 Valve  INFO     dpid:1                Packet_in src:00:00:00:00:00:07 dst:33:33:00:00:00:02 in_port:7 vid:10
+EVENT ofp_event->Valve EventOFPPacketIn
+Jun 26 10:06:38 Valve  INFO     dpid:1                Packet_in src:00:00:00:00:00:06 dst:33:33:00:00:00:16 in_port:6 vid:10
+EVENT ofp_event->Valve EventOFPPacketIn
+Jun 26 10:06:38 Valve  INFO     dpid:1                Packet_in src:00:00:00:00:00:06 dst:33:33:00:00:00:02 in_port:6 vid:10
+EVENT ofp_event->Valve EventOFPPacketIn
+Jun 26 10:06:41 Valve  INFO     dpid:1                Packet_in src:00:00:00:00:00:01 dst:33:33:00:00:00:02 in_port:1 vid:10
+connected socket:<eventlet.greenio.base.GreenSocket object at 0xb648e46c> address:('127.0.0.1', 52906)
+EVENT ofp_event->dpset EventOFPStateChange
+Terminated
+21600681@Mininet-21600681:/home/sdn/valve$
+
+root@Mininet-21600681:~# QXcbConnection: Could not connect to display localhost:14.0
+ls
+exit  wireshark
+root@Mininet-21600681:~#

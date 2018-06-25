@@ -1,0 +1,825 @@
+
+% Please answer 'yes' or 'no'.
+Would you like to enter the initial configuration dialog? [yes/no]: n
+
+
+Press RETURN to get started!
+
+
+Jan  2 12:00:04.627: %IOS_LICENSE_IMAGE_APPLICATION-6-LICENSE_LEVEL: Module name = c2900 Next reboot level = ipbasek9 and License = ipbasek9
+Jan  2 12:00:04.787: %IOS_LICENSE_IMAGE_APPLICATION-6-LICENSE_LEVEL: Module name = c2900 Next reboot level = securityk9 and License = securityk9
+Apr  4 21:26:51.623: %IFMGR-7-NO_IFINDEX_FILE: Unable to open nvram:/ifIndex-table No such file or directory
+Apr  4 21:27:13.819: %VPN_HW-6-INFO_LOC: Crypto engine: onboard 0  State changed to: Initialized
+Apr  4 21:27
+Router>:13.823: %VPN_HW-6-INFO_LOC: Crypto engine: onboard 0  State changed to: Enabled
+Apr  4 21:27:14.531: %LINK-3-UPDOWN: Interface GigabitEthernet0/0, changed state to down
+Apr  4 21:27:14.531: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to up
+Apr  4 21:27:14.531: %LINK-3-UPDOWN: Interface Serial0/0/0, changed state to down
+Apr  4 21:27:14.531: %LINK-3-UPDOWN: Interface Serial0/0/1, changed state to down
+Apr  4 21:27:15.631: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to down
+Apr  4 21:27:15.631: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+Apr  4 21:27:15.631: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/0, changed state to down
+Apr  4 21:27:15.631: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/1, changed state to down
+Apr  4 21:27:16.475: %SYS-6-STARTUP_CONFIG_IGNORED: System startup configuration is ignored based on the configuration register setting.
+Apr  4 21:29:11.531: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to down
+Apr  4 21:29:12.531: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to down
+Apr  4 21:45:06.083: %LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to administratively down
+Apr  4 21:45:06.291: %LINK-5-CHANGED: Interface Serial0/0/0, changed state to administratively down
+Apr  4 21:45:07.807: %LINK-5-CHANGED: Interface Embedded-Service-Engine0/0, changed state to administratively down
+Apr  4 21:45:07.807: %LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to administratively down
+Apr  4 21:45:07.807: %LINK-5-CHANGED: Interface Serial0/0/1, changed state to administratively down
+Apr  4 21:45:08.851: %LINEPROTO-5-UPDOWN: Line protocol on Interface Embedded-Service-Engine0/0, changed state to down
+Apr  4 21:45:09.311: %SYS-5-RESTART: System restarted --
+Cisco IOS Software, C2900 Software (C2900-UNIVERSALK9-M), Version 15.1(4)M5, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2012 by Cisco Systems, Inc.
+Compiled Tue 04-Sep-12 16:37 by prod_rel_team
+Apr  4 21:45:09.315: %SNMP-5-COLDSTART: SNMP agent on host Router is undergoing a cold start
+Apr  4 21:45:09.927: %SYS-6-BOOTTIME: Time taken to reboot after reload = 1211 seconds
+Apr  4 21:45:10.551: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+Apr  4 21:45:10.551: %CRYPTO-6-GDOI_ON_OFF: GDOI is OFF
+Apr  4 21:45:10.551: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+Apr  4 21:45:10.551: %CRYPTO-6-GDOI_ON_OFF: GDOI is OFF
+Router>enable
+Router#config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)# no ip domain-lookup
+Router(config)#hostname R1
+R1(config)#ser
+R1(config)#service pass
+R1(config)#service password-encryption
+R1(config)#banner motd #
+Enter TEXT message.  End with the character '#'.
+
+MESSAGE INSERT
+
+#
+R1(config)#line con 0
+R1(config-line)#loggging sy
+R1(config-line)#exit
+R1(config)#int g0/1
+R1(config-if)#ip address 192.168.10.1 255.255.255.0
+R1(config-if)#no shutdown
+R1(config-if)#
+Apr  4 21:50:40.799: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to down
+Apr  4 21:50:43.547: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to up
+Apr  4 21:50:44.547: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to upint lo0
+R1(config-if)#
+Apr  4 21:51:02.819: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback0, changed state to up
+R1(config-if)#ip address 192.168.20.1 255.255.255.0
+R1(config-if)#int s0/0/0
+R1(config-if)#clock rate 128000
+R1(config-if)#ip adress 10.1.1.1 255.255.255.252
+                   ^
+% Invalid input detected at '^' marker.
+
+R1(config-if)#ip address 10.1.1.1 255.255.255.252
+R1(config-if)#no shutdown
+R1(config-if)#
+Apr  4 21:52:59.087: %LINK-3-UPDOWN: Interface Serial0/0/0, changed state to up
+Apr  4 21:53:00.087: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/0, changed state to up
+% Please answer 'yes' or 'no'.
+Would you like to enter the initial configuration dialog? [yes/no]: no
+
+
+Press RETURN to get started!
+
+
+Jan  2 12:00:04.655: %IOS_LICENSE_IMAGE_APPLICATION-6-LICENSE_LEVEL: Module name = c2900 Next reboot level = ipbasek9 and License = ipbasek9
+Jan  2 12:00:04.815: %IOS_LICENSE_IMAGE_APPLICATION-6-LICENSE_LEVEL: Module name = c2900 Next reboot level = securityk9 and License = securityk9
+Apr  5 10:06:20.623: %IFMGR-7-NO_IFINDEX_FILE: Unable to open nvram:/ifIndex-table No such file or directory
+Apr  5 10:06:42.767: %VPN_HW-6-INFO_LOC: Crypto engine: onboard 0  State changed to: Initialized
+Apr  5 10:06:42.771: %VPN_HW-6-INFO_LOC: Crypto engine: onboard 0  State changed to: Enabled
+Apr  5 10:06:43.467: %LINK-3-UPDOWN: Interface GigabitEthernet0/0, changed state to down
+Apr  5 10:06:43.467: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to down
+Apr  5 10:06:43.467: %LINK-3-UPDOWN: Interface Serial0/1/0, changed state to up
+Apr  5 10:06:43.471: %LINK-3-UPDOWN: Interface Serial0/1/1, changed state to down
+Apr  5 10:06:44.575: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to down
+Apr  5 10:06:44.575: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to down
+Apr  5 10:06:44.575: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/1/0, changed state to up
+Apr  5 10:06:44.575: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/1/1, changed state to down
+Apr  5 10:06:45.419: %SYS-6-STARTUP_CONFIG_IGNORED: System startup configuration is ignored based on the configuration register setting.
+Apr  5 10:11:23.671: %LINK-3-UPDOWN: Interface Serial0/1/0, changed state to down
+Apr  5 10:11:24.671: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/1/0, changed state to down
+Apr  5 10:19:45.175: %LINK-5-CHANGED: Interface Serial0/1/0, changed state to administratively down
+Apr  5 10:19:46.903: %LINK-5-CHANGED: Interface Embedded-Service-Engine0/0, changed state to administratively down
+Apr  5 10:19:46.903: %LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to administratively down
+Apr  5 10:19:46.903: %LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to administratively down
+Apr  5 10:19:46.903: %LINK-5-CHANGED: Interface Serial0/1/1, changed state to administratively down
+Apr  5 10:19:47.555: %SYS-5-RESTART: System restarted --
+Cisco IOS Software, C2900 Software (C2900-UNIVERSALK9-M), Version 15.1(4)M5, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2012 by Cisco Systems, Inc.
+Compiled Tue 04-Sep-12 16:37 by prod_rel_team
+Apr  5 10:19:47.555: %SNMP-5-COLDSTART: SNMP agent on host Router is undergoing a cold start
+Apr  5 10:19:48.175: %LINEPROTO-5-UPDOWN: Line protocol on Interface Embedded-Service-Engine0/0, changed state to down
+Apr  5 10:19:48.179: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+Apr  5 10:19:48.179: %CRYPTO-6-GDOI_ON_OFF: GDOI is OFF
+Apr  5 10:19:48.179: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+Apr  5 10:19:48.179: %CRYPTO-6-GDOI_ON_OFF: GDOI is OFF
+Router>enable
+Router#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname ISP
+ISP(config)#int s0/0/0
+                   ^
+% Invalid input detected at '^' marker.
+
+ISP(config)#int s0/1/0
+ISP(config-if)#ip address 10.1.1.2 255.255.255.252
+ISP(config-if)#no shudown
+                     ^
+% Invalid input detected at '^' marker.
+
+ISP(config-if)#no shutdown
+ISP(config-if)#
+Apr  5 10:22:09.215: %LINK-3-UPDOWN: Interface Serial0/1/0, changed state to up
+Apr  5 10:22:10.215: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/1/0, changed state to up
+ISP(config-if)#int s0/1/1
+ISP(config-if)#clock rate 128000
+ISP(config-if)#ip address 10.2.2.2 255.255.255.252
+ISP(config-if)#no shutdown
+ISP(config-if)#int
+Apr  5 10:23:40.975: %LINK-3-UPDOWN: Interface Serial0/1/1, changed state to    ISP(config-if)#int lo0
+ISP(config-if)#
+Apr  5 10:24:01.583: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback0, changed state to up
+ISP(config-if)#ip address 209.165.200.225 255.255.255.224
+ISP(config-if)#
+
+
+% Please answer 'yes' or 'no'.
+Would you like to enter the initial configuration dialog? [yes/no]: n
+
+
+Press RETURN to get started!
+
+
+Jan  2 12:00:04.627: %IOS_LICENSE_IMAGE_APPLICATION-6-LICENSE_LEVEL: Module name = c2900 Next reboot level = ipbasek9 and License = ipbasek9
+Jan  2 12:00:04.787: %IOS_LICENSE_IMAGE_APPLICATION-6-LICENSE_LEVEL: Module name = c2900 Next reboot level = securityk9 and License = securityk9
+Apr  4 21:26:51.623: %IFMGR-7-NO_IFINDEX_FILE: Unable to open nvram:/ifIndex-table No such file or directory
+Apr  4 21:27:13.819: %VPN_HW-6-INFO_LOC: Crypto engine: onboard 0  State changed to: Initialized
+Apr  4 21:27
+Router>:13.823: %VPN_HW-6-INFO_LOC: Crypto engine: onboard 0  State changed to: Enabled
+Apr  4 21:27:14.531: %LINK-3-UPDOWN: Interface GigabitEthernet0/0, changed state to down
+Apr  4 21:27:14.531: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to up
+Apr  4 21:27:14.531: %LINK-3-UPDOWN: Interface Serial0/0/0, changed state to down
+Apr  4 21:27:14.531: %LINK-3-UPDOWN: Interface Serial0/0/1, changed state to down
+Apr  4 21:27:15.631: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to down
+Apr  4 21:27:15.631: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+Apr  4 21:27:15.631: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/0, changed state to down
+Apr  4 21:27:15.631: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/1, changed state to down
+Apr  4 21:27:16.475: %SYS-6-STARTUP_CONFIG_IGNORED: System startup configuration is ignored based on the configuration register setting.
+Apr  4 21:29:11.531: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to down
+Apr  4 21:29:12.531: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to down
+Apr  4 21:45:06.083: %LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to administratively down
+Apr  4 21:45:06.291: %LINK-5-CHANGED: Interface Serial0/0/0, changed state to administratively down
+Apr  4 21:45:07.807: %LINK-5-CHANGED: Interface Embedded-Service-Engine0/0, changed state to administratively down
+Apr  4 21:45:07.807: %LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to administratively down
+Apr  4 21:45:07.807: %LINK-5-CHANGED: Interface Serial0/0/1, changed state to administratively down
+Apr  4 21:45:08.851: %LINEPROTO-5-UPDOWN: Line protocol on Interface Embedded-Service-Engine0/0, changed state to down
+Apr  4 21:45:09.311: %SYS-5-RESTART: System restarted --
+Cisco IOS Software, C2900 Software (C2900-UNIVERSALK9-M), Version 15.1(4)M5, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2012 by Cisco Systems, Inc.
+Compiled Tue 04-Sep-12 16:37 by prod_rel_team
+Apr  4 21:45:09.315: %SNMP-5-COLDSTART: SNMP agent on host Router is undergoing a cold start
+Apr  4 21:45:09.927: %SYS-6-BOOTTIME: Time taken to reboot after reload = 1211 seconds
+Apr  4 21:45:10.551: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+Apr  4 21:45:10.551: %CRYPTO-6-GDOI_ON_OFF: GDOI is OFF
+Apr  4 21:45:10.551: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+Apr  4 21:45:10.551: %CRYPTO-6-GDOI_ON_OFF: GDOI is OFF
+Router>enable
+Router#config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)# no ip domain-lookup
+Router(config)#hostname R1
+R1(config)#ser
+R1(config)#service pass
+R1(config)#service password-encryption
+R1(config)#banner motd #
+Enter TEXT message.  End with the character '#'.
+
+MESSAGE INSERT
+
+#
+R1(config)#line con 0
+R1(config-line)#loggging sy
+R1(config-line)#exit
+R1(config)#int g0/1
+R1(config-if)#ip address 192.168.10.1 255.255.255.0
+R1(config-if)#no shutdown
+R1(config-if)#
+Apr  4 21:50:40.799: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to down
+Apr  4 21:50:43.547: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to up
+Apr  4 21:50:44.547: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to upint lo0
+R1(config-if)#
+Apr  4 21:51:02.819: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback0, changed state to up
+R1(config-if)#ip address 192.168.20.1 255.255.255.0
+R1(config-if)#int s0/0/0
+R1(config-if)#clock rate 128000
+R1(config-if)#ip adress 10.1.1.1 255.255.255.252
+                   ^
+% Invalid input detected at '^' marker.
+
+R1(config-if)#ip address 10.1.1.1 255.255.255.252
+R1(config-if)#no shutdown
+R1(config-if)#
+Apr  4 21:52:59.087: %LINK-3-UPDOWN: Interface Serial0/0/0, changed state to up
+Apr  4 21:53:00.087: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/0, changed state to up
+% Please answer 'yes' or 'no'.
+Would you like to enter the initial configuration dialog? [yes/no]: no
+
+
+Press RETURN to get started!
+
+
+Jan  2 12:00:04.655: %IOS_LICENSE_IMAGE_APPLICATION-6-LICENSE_LEVEL: Module name = c2900 Next reboot level = ipbasek9 and License = ipbasek9
+Jan  2 12:00:04.815: %IOS_LICENSE_IMAGE_APPLICATION-6-LICENSE_LEVEL: Module name = c2900 Next reboot level = securityk9 and License = securityk9
+Apr  5 10:06:20.623: %IFMGR-7-NO_IFINDEX_FILE: Unable to open nvram:/ifIndex-table No such file or directory
+Apr  5 10:06:42.767: %VPN_HW-6-INFO_LOC: Crypto engine: onboard 0  State changed to: Initialized
+Apr  5 10:06:42.771: %VPN_HW-6-INFO_LOC: Crypto engine: onboard 0  State changed to: Enabled
+Apr  5 10:06:43.467: %LINK-3-UPDOWN: Interface GigabitEthernet0/0, changed state to down
+Apr  5 10:06:43.467: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to down
+Apr  5 10:06:43.467: %LINK-3-UPDOWN: Interface Serial0/1/0, changed state to up
+Apr  5 10:06:43.471: %LINK-3-UPDOWN: Interface Serial0/1/1, changed state to down
+Apr  5 10:06:44.575: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to down
+Apr  5 10:06:44.575: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to down
+Apr  5 10:06:44.575: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/1/0, changed state to up
+Apr  5 10:06:44.575: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/1/1, changed state to down
+Apr  5 10:06:45.419: %SYS-6-STARTUP_CONFIG_IGNORED: System startup configuration is ignored based on the configuration register setting.
+Apr  5 10:11:23.671: %LINK-3-UPDOWN: Interface Serial0/1/0, changed state to down
+Apr  5 10:11:24.671: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/1/0, changed state to down
+Apr  5 10:19:45.175: %LINK-5-CHANGED: Interface Serial0/1/0, changed state to administratively down
+Apr  5 10:19:46.903: %LINK-5-CHANGED: Interface Embedded-Service-Engine0/0, changed state to administratively down
+Apr  5 10:19:46.903: %LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to administratively down
+Apr  5 10:19:46.903: %LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to administratively down
+Apr  5 10:19:46.903: %LINK-5-CHANGED: Interface Serial0/1/1, changed state to administratively down
+Apr  5 10:19:47.555: %SYS-5-RESTART: System restarted --
+Cisco IOS Software, C2900 Software (C2900-UNIVERSALK9-M), Version 15.1(4)M5, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2012 by Cisco Systems, Inc.
+Compiled Tue 04-Sep-12 16:37 by prod_rel_team
+Apr  5 10:19:47.555: %SNMP-5-COLDSTART: SNMP agent on host Router is undergoing a cold start
+Apr  5 10:19:48.175: %LINEPROTO-5-UPDOWN: Line protocol on Interface Embedded-Service-Engine0/0, changed state to down
+Apr  5 10:19:48.179: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+Apr  5 10:19:48.179: %CRYPTO-6-GDOI_ON_OFF: GDOI is OFF
+Apr  5 10:19:48.179: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+Apr  5 10:19:48.179: %CRYPTO-6-GDOI_ON_OFF: GDOI is OFF
+Router>enable
+Router#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname ISP
+ISP(config)#int s0/0/0
+                   ^
+% Invalid input detected at '^' marker.
+
+ISP(config)#int s0/1/0
+ISP(config-if)#ip address 10.1.1.2 255.255.255.252
+ISP(config-if)#no shudown
+                     ^
+% Invalid input detected at '^' marker.
+
+ISP(config-if)#no shutdown
+ISP(config-if)#
+Apr  5 10:22:09.215: %LINK-3-UPDOWN: Interface Serial0/1/0, changed state to up
+Apr  5 10:22:10.215: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/1/0, changed state to up
+ISP(config-if)#int s0/1/1
+ISP(config-if)#clock rate 128000
+ISP(config-if)#ip address 10.2.2.2 255.255.255.252
+ISP(config-if)#no shutdown
+ISP(config-if)#int
+Apr  5 10:23:40.975: %LINK-3-UPDOWN: Interface Serial0/1/1, changed state to    ISP(config-if)#int lo0
+ISP(config-if)#
+Apr  5 10:24:01.583: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback0, changed state to up
+ISP(config-if)#ip address 209.165.200.225 255.255.255.224
+ISP(config-if)#
+R3>enable
+R3#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R3(config)#int g0/1
+R3(config-if)#ip address 192.168.30.1 255.255.255.0
+R3(config-if)#no shutdown
+R3(config-if)#int
+Apr  5 10:13:55.495: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to downlo0
+R3(config-if)#
+Apr  5 10:13:58.719: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to up
+Apr  5 10:13:59.719: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+Apr  5 10:14:00.135: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback0, changed state to up
+R3(config-if)#ip add
+R3(config-if)#ip address 192.168.40.1 255.255.255.0
+R3(config-if)#int s0/0/0
+R3(config-if)#int s0/0/1
+R3(config-if)#ip add
+R3(config-if)#ip address  10.2.2.1 255.255.255.252
+R3(config-if)#no shutdown
+R3(config-if)#
+Apr  5 10:15:14.439: %LINK-3-UPDOWN: Interface Serial0/0/1, changed state to up
+Apr  5 10:15:15.439: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/1, changed state to up
+R3(config-if)#
+Switch>enable
+Switch#config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#no ip domain-lookup
+Switch(config)#line vty 0 15
+Switch(config-line)#exit
+Switch(config)#hostname S1
+S1(config)#int vlan 1
+S1(config-if)#ip add
+S1(config-if)#ip address 192.168.10.11 255.255.255.0
+S1(config-if)#no shutdown
+S1(config-if)#exit
+*Mar  1 00:36:29.300: %LINK-3-UPDOWN: Interface Vlan1, changed state to up
+*Mar  1 00:36:29.309: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to up
+S1(config)#def
+S1(config)#defa
+S1(config)#default-gateway 192.168.10.1
+                   ^
+% Invalid input detected at '^' marker.
+
+S1(config)#ip default-gateway 192.168.10.1
+S1(config)#
+
+
+         --- System Configuration Dialog ---
+
+Enable secret warning
+----------------------------------
+In order to access the device manager, an enable secret is required
+If you enter the initial configuration dialog, you will be prompted for the enable secret
+If you choose not to enter the intial configuration dialog, or if you exit setup without setting the enable secret,
+please set an enable secret using the following CLI in configuration mode-
+enable secret 0 <cleartext password>
+----------------------------------
+Would you like to enter the initial configuration dialog? [yes/no]: n
+Switch>enable
+Switch#
+*Mar  1 00:28:41.216: %LINK-5-CHANGED: Interface Vlan1, changed state to administratively down
+*Mar  1 00:28:41.224: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to downconfig term
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#hostname S3
+S3(config)#int vlan 1
+S3(config-if)#ip address 192.168.30.11 255.255.255.0
+S3(config-if)#no shut
+S3(config-if)#
+*Mar  1 00:30:55.551: %LINK-3-UPDOWN: Interface Vlan1, changed state to up
+*Mar  1 00:30:55.560: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to upexit
+S3(config)#ip default-gateway 192.168.30.1
+S3(config)#
+
+MESSAGE INSERT
+
+
+R1>enable
+R1#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#router rip
+R1(config-router)#version 2
+R1(config-router)#network 192.168.10.0
+R1(config-router)#network 192.168.20.0
+R1(config-router)#network 10.1.1.0
+R1(config-router)#
+ISP>enable
+ISP#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+ISP(config)#router rip
+ISP(config-router)#version 2
+ISP(config-router)#network 209.165.200.224
+ISP(config-router)#network 10.1.1.0
+ISP(config-router)#network 10.2.2.0
+ISP(config-router)#
+R3>enable
+R3#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R3(config)#do show ip route connected
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        10.2.2.0/30 is directly connected, Serial0/0/1
+L        10.2.2.1/32 is directly connected, Serial0/0/1
+      192.168.30.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.30.0/24 is directly connected, GigabitEthernet0/1
+L        192.168.30.1/32 is directly connected, GigabitEthernet0/1
+      192.168.40.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.40.0/24 is directly connected, Loopback0
+L        192.168.40.1/32 is directly connected, Loopback0
+R3(config)#router rip
+R3(config-router)#version 2
+R3(config-router)#network 10.2.2.0
+R3(config-router)#network 192.168.30.0
+R3(config-router)#network 192.168.40.0
+R3(config-router)#
+
+
+% Please answer 'yes' or 'no'.
+Would you like to enter the initial configuration dialog? [yes/no]: n
+
+
+Press RETURN to get started!
+
+
+Jan  2 12:00:04.627: %IOS_LICENSE_IMAGE_APPLICATION-6-LICENSE_LEVEL: Module name = c2900 Next reboot level = ipbasek9 and License = ipbasek9
+Jan  2 12:00:04.787: %IOS_LICENSE_IMAGE_APPLICATION-6-LICENSE_LEVEL: Module name = c2900 Next reboot level = securityk9 and License = securityk9
+Apr  4 21:26:51.623: %IFMGR-7-NO_IFINDEX_FILE: Unable to open nvram:/ifIndex-table No such file or directory
+Apr  4 21:27:13.819: %VPN_HW-6-INFO_LOC: Crypto engine: onboard 0  State changed to: Initialized
+Apr  4 21:27
+Router>:13.823: %VPN_HW-6-INFO_LOC: Crypto engine: onboard 0  State changed to: Enabled
+Apr  4 21:27:14.531: %LINK-3-UPDOWN: Interface GigabitEthernet0/0, changed state to down
+Apr  4 21:27:14.531: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to up
+Apr  4 21:27:14.531: %LINK-3-UPDOWN: Interface Serial0/0/0, changed state to down
+Apr  4 21:27:14.531: %LINK-3-UPDOWN: Interface Serial0/0/1, changed state to down
+Apr  4 21:27:15.631: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to down
+Apr  4 21:27:15.631: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+Apr  4 21:27:15.631: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/0, changed state to down
+Apr  4 21:27:15.631: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/1, changed state to down
+Apr  4 21:27:16.475: %SYS-6-STARTUP_CONFIG_IGNORED: System startup configuration is ignored based on the configuration register setting.
+Apr  4 21:29:11.531: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to down
+Apr  4 21:29:12.531: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to down
+Apr  4 21:45:06.083: %LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to administratively down
+Apr  4 21:45:06.291: %LINK-5-CHANGED: Interface Serial0/0/0, changed state to administratively down
+Apr  4 21:45:07.807: %LINK-5-CHANGED: Interface Embedded-Service-Engine0/0, changed state to administratively down
+Apr  4 21:45:07.807: %LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to administratively down
+Apr  4 21:45:07.807: %LINK-5-CHANGED: Interface Serial0/0/1, changed state to administratively down
+Apr  4 21:45:08.851: %LINEPROTO-5-UPDOWN: Line protocol on Interface Embedded-Service-Engine0/0, changed state to down
+Apr  4 21:45:09.311: %SYS-5-RESTART: System restarted --
+Cisco IOS Software, C2900 Software (C2900-UNIVERSALK9-M), Version 15.1(4)M5, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2012 by Cisco Systems, Inc.
+Compiled Tue 04-Sep-12 16:37 by prod_rel_team
+Apr  4 21:45:09.315: %SNMP-5-COLDSTART: SNMP agent on host Router is undergoing a cold start
+Apr  4 21:45:09.927: %SYS-6-BOOTTIME: Time taken to reboot after reload = 1211 seconds
+Apr  4 21:45:10.551: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+Apr  4 21:45:10.551: %CRYPTO-6-GDOI_ON_OFF: GDOI is OFF
+Apr  4 21:45:10.551: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+Apr  4 21:45:10.551: %CRYPTO-6-GDOI_ON_OFF: GDOI is OFF
+Router>enable
+Router#config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)# no ip domain-lookup
+Router(config)#hostname R1
+R1(config)#ser
+R1(config)#service pass
+R1(config)#service password-encryption
+R1(config)#banner motd #
+Enter TEXT message.  End with the character '#'.
+
+MESSAGE INSERT
+
+#
+R1(config)#line con 0
+R1(config-line)#loggging sy
+R1(config-line)#exit
+R1(config)#int g0/1
+R1(config-if)#ip address 192.168.10.1 255.255.255.0
+R1(config-if)#no shutdown
+R1(config-if)#
+Apr  4 21:50:40.799: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to down
+Apr  4 21:50:43.547: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to up
+Apr  4 21:50:44.547: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to upint lo0
+R1(config-if)#
+Apr  4 21:51:02.819: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback0, changed state to up
+R1(config-if)#ip address 192.168.20.1 255.255.255.0
+R1(config-if)#int s0/0/0
+R1(config-if)#clock rate 128000
+R1(config-if)#ip adress 10.1.1.1 255.255.255.252
+                   ^
+% Invalid input detected at '^' marker.
+
+R1(config-if)#ip address 10.1.1.1 255.255.255.252
+R1(config-if)#no shutdown
+R1(config-if)#
+Apr  4 21:52:59.087: %LINK-3-UPDOWN: Interface Serial0/0/0, changed state to up
+Apr  4 21:53:00.087: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/0, changed state to up
+% Please answer 'yes' or 'no'.
+Would you like to enter the initial configuration dialog? [yes/no]: no
+
+
+Press RETURN to get started!
+
+
+Jan  2 12:00:04.655: %IOS_LICENSE_IMAGE_APPLICATION-6-LICENSE_LEVEL: Module name = c2900 Next reboot level = ipbasek9 and License = ipbasek9
+Jan  2 12:00:04.815: %IOS_LICENSE_IMAGE_APPLICATION-6-LICENSE_LEVEL: Module name = c2900 Next reboot level = securityk9 and License = securityk9
+Apr  5 10:06:20.623: %IFMGR-7-NO_IFINDEX_FILE: Unable to open nvram:/ifIndex-table No such file or directory
+Apr  5 10:06:42.767: %VPN_HW-6-INFO_LOC: Crypto engine: onboard 0  State changed to: Initialized
+Apr  5 10:06:42.771: %VPN_HW-6-INFO_LOC: Crypto engine: onboard 0  State changed to: Enabled
+Apr  5 10:06:43.467: %LINK-3-UPDOWN: Interface GigabitEthernet0/0, changed state to down
+Apr  5 10:06:43.467: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to down
+Apr  5 10:06:43.467: %LINK-3-UPDOWN: Interface Serial0/1/0, changed state to up
+Apr  5 10:06:43.471: %LINK-3-UPDOWN: Interface Serial0/1/1, changed state to down
+Apr  5 10:06:44.575: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to down
+Apr  5 10:06:44.575: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to down
+Apr  5 10:06:44.575: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/1/0, changed state to up
+Apr  5 10:06:44.575: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/1/1, changed state to down
+Apr  5 10:06:45.419: %SYS-6-STARTUP_CONFIG_IGNORED: System startup configuration is ignored based on the configuration register setting.
+Apr  5 10:11:23.671: %LINK-3-UPDOWN: Interface Serial0/1/0, changed state to down
+Apr  5 10:11:24.671: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/1/0, changed state to down
+Apr  5 10:19:45.175: %LINK-5-CHANGED: Interface Serial0/1/0, changed state to administratively down
+Apr  5 10:19:46.903: %LINK-5-CHANGED: Interface Embedded-Service-Engine0/0, changed state to administratively down
+Apr  5 10:19:46.903: %LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to administratively down
+Apr  5 10:19:46.903: %LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to administratively down
+Apr  5 10:19:46.903: %LINK-5-CHANGED: Interface Serial0/1/1, changed state to administratively down
+Apr  5 10:19:47.555: %SYS-5-RESTART: System restarted --
+Cisco IOS Software, C2900 Software (C2900-UNIVERSALK9-M), Version 15.1(4)M5, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2012 by Cisco Systems, Inc.
+Compiled Tue 04-Sep-12 16:37 by prod_rel_team
+Apr  5 10:19:47.555: %SNMP-5-COLDSTART: SNMP agent on host Router is undergoing a cold start
+Apr  5 10:19:48.175: %LINEPROTO-5-UPDOWN: Line protocol on Interface Embedded-Service-Engine0/0, changed state to down
+Apr  5 10:19:48.179: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+Apr  5 10:19:48.179: %CRYPTO-6-GDOI_ON_OFF: GDOI is OFF
+Apr  5 10:19:48.179: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+Apr  5 10:19:48.179: %CRYPTO-6-GDOI_ON_OFF: GDOI is OFF
+Router>enable
+Router#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname ISP
+ISP(config)#int s0/0/0
+                   ^
+% Invalid input detected at '^' marker.
+
+ISP(config)#int s0/1/0
+ISP(config-if)#ip address 10.1.1.2 255.255.255.252
+ISP(config-if)#no shudown
+                     ^
+% Invalid input detected at '^' marker.
+
+ISP(config-if)#no shutdown
+ISP(config-if)#
+Apr  5 10:22:09.215: %LINK-3-UPDOWN: Interface Serial0/1/0, changed state to up
+Apr  5 10:22:10.215: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/1/0, changed state to up
+ISP(config-if)#int s0/1/1
+ISP(config-if)#clock rate 128000
+ISP(config-if)#ip address 10.2.2.2 255.255.255.252
+ISP(config-if)#no shutdown
+ISP(config-if)#int
+Apr  5 10:23:40.975: %LINK-3-UPDOWN: Interface Serial0/1/1, changed state to    ISP(config-if)#int lo0
+ISP(config-if)#
+Apr  5 10:24:01.583: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback0, changed state to up
+ISP(config-if)#ip address 209.165.200.225 255.255.255.224
+ISP(config-if)#
+R3>enable
+R3#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R3(config)#int g0/1
+R3(config-if)#ip address 192.168.30.1 255.255.255.0
+R3(config-if)#no shutdown
+R3(config-if)#int
+Apr  5 10:13:55.495: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to downlo0
+R3(config-if)#
+Apr  5 10:13:58.719: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to up
+Apr  5 10:13:59.719: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+Apr  5 10:14:00.135: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback0, changed state to up
+R3(config-if)#ip add
+R3(config-if)#ip address 192.168.40.1 255.255.255.0
+R3(config-if)#int s0/0/0
+R3(config-if)#int s0/0/1
+R3(config-if)#ip add
+R3(config-if)#ip address  10.2.2.1 255.255.255.252
+R3(config-if)#no shutdown
+R3(config-if)#
+Apr  5 10:15:14.439: %LINK-3-UPDOWN: Interface Serial0/0/1, changed state to up
+Apr  5 10:15:15.439: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/1, changed state to up
+R3(config-if)#
+Switch>enable
+Switch#config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#no ip domain-lookup
+Switch(config)#line vty 0 15
+Switch(config-line)#exit
+Switch(config)#hostname S1
+S1(config)#int vlan 1
+S1(config-if)#ip add
+S1(config-if)#ip address 192.168.10.11 255.255.255.0
+S1(config-if)#no shutdown
+S1(config-if)#exit
+*Mar  1 00:36:29.300: %LINK-3-UPDOWN: Interface Vlan1, changed state to up
+*Mar  1 00:36:29.309: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to up
+S1(config)#def
+S1(config)#defa
+S1(config)#default-gateway 192.168.10.1
+                   ^
+% Invalid input detected at '^' marker.
+
+S1(config)#ip default-gateway 192.168.10.1
+S1(config)#
+
+
+         --- System Configuration Dialog ---
+
+Enable secret warning
+----------------------------------
+In order to access the device manager, an enable secret is required
+If you enter the initial configuration dialog, you will be prompted for the enable secret
+If you choose not to enter the intial configuration dialog, or if you exit setup without setting the enable secret,
+please set an enable secret using the following CLI in configuration mode-
+enable secret 0 <cleartext password>
+----------------------------------
+Would you like to enter the initial configuration dialog? [yes/no]: n
+Switch>enable
+Switch#
+*Mar  1 00:28:41.216: %LINK-5-CHANGED: Interface Vlan1, changed state to administratively down
+*Mar  1 00:28:41.224: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to downconfig term
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#hostname S3
+S3(config)#int vlan 1
+S3(config-if)#ip address 192.168.30.11 255.255.255.0
+S3(config-if)#no shut
+S3(config-if)#
+*Mar  1 00:30:55.551: %LINK-3-UPDOWN: Interface Vlan1, changed state to up
+*Mar  1 00:30:55.560: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to upexit
+S3(config)#ip default-gateway 192.168.30.1
+S3(config)#
+
+MESSAGE INSERT
+
+
+R1>enable
+R1#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#router rip
+R1(config-router)#version 2
+R1(config-router)#network 192.168.10.0
+R1(config-router)#network 192.168.20.0
+R1(config-router)#network 10.1.1.0
+R1(config-router)#
+ISP>enable
+ISP#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+ISP(config)#router rip
+ISP(config-router)#version 2
+ISP(config-router)#network 209.165.200.224
+ISP(config-router)#network 10.1.1.0
+ISP(config-router)#network 10.2.2.0
+ISP(config-router)#
+R3>enable
+R3#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R3(config)#do show ip route connected
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        10.2.2.0/30 is directly connected, Serial0/0/1
+L        10.2.2.1/32 is directly connected, Serial0/0/1
+      192.168.30.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.30.0/24 is directly connected, GigabitEthernet0/1
+L        192.168.30.1/32 is directly connected, GigabitEthernet0/1
+      192.168.40.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.40.0/24 is directly connected, Loopback0
+L        192.168.40.1/32 is directly connected, Loopback0
+R3(config)#router rip
+R3(config-router)#version 2
+R3(config-router)#network 10.2.2.0
+R3(config-router)#network 192.168.30.0
+R3(config-router)#network 192.168.40.0
+R3(config-router)#
+
+MESSAGE INSERT
+
+
+R1>no ip domain-lookup
+      ^
+% Invalid input detected at '^' marker.
+
+R1>hostname R1
+    ^
+% Invalid input detected at '^' marker.
+
+R1>service password-encryption
+     ^
+% Invalid input detected at '^' marker.
+
+R1>enable secret class
+          ^
+% Invalid input detected at '^' marker.
+
+R1>banner motd #
+   ^
+% Invalid input detected at '^' marker.
+
+R1>Unauthorized access is strictly prohibited. #
+    ^
+% Invalid input detected at '^' marker.
+
+R1>Line con 0
+     ^
+% Invalid input detected at '^' marker.
+
+R1>password cisco
+     ^
+% Invalid input detected at '^' marker.
+
+R1>enable
+R1#no ip domain-lookup
+      ^
+% Invalid input detected at '^' marker.
+
+R1#hostname R1
+    ^
+% Invalid input detected at '^' marker.
+
+R1#service password-encryption
+           ^
+% Invalid input detected at '^' marker.
+
+R1#enable secret class
+          ^
+% Invalid input detected at '^' marker.
+
+R1#banner motd #
+    ^
+% Invalid input detected at '^' marker.
+
+R1#Unauthorized access is strictly prohibited. #
+     ^
+% Invalid input detected at '^' marker.
+
+R1#Line con 0
+     ^
+% Invalid input detected at '^' marker.
+
+R1#password cisco
+     ^
+% Invalid input detected at '^' marker.
+
+R1#config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#no ip domain-lookup
+R1(config)#hostname R1
+R1(config)#service password-encryption
+R1(config)#enable secret class
+R1(config)#banner motd #
+Enter TEXT message.  End with the character '#'.
+Unauthorized access is strictly prohibited. #
+R1(config)#Line con 0
+R1(config-line)#password cisco
+R1(config-line)#loginlogging synchronous
+                     ^
+% Invalid input detected at '^' marker.
+
+R1(config-line)#line vty 0 4
+R1(config-line)#password cisco
+R1(config-line)#login
+R1(config-line)#logging synchronous
+R1(config-line)#line vty 0 4
+R1(config-line)#password cisco
+R1(config-line)#login
+S1>enable
+S1#config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+S1(config)#no ip domain-lookup
+S1(config)#service password-encryption
+S1(config)#enable secret class
+S1(config)#banner motd #
+Enter TEXT message.  End with the character '#'
+Unauthorized access is strictly prohibited. #
+S1(config)#Line con 0
+S1(config-line)#password cisco
+S1(config-line)#login
+S1(config-line)#logging synchronous
+S1(config-line)#line vty 0 15
+S1(config-line)#password cisco
+S1(config-line)#login
+S1(config-line)#exit
+S1(config)#
+S3>enable
+S3#config
+Configuring from terminal, memory, or network [terminal]?
+Enter configuration commands, one per line.  End with CNTL/Z.
+S3(config)#exit
+S3#config
+*Mar  1 00:51:21.471: %SYS-5-CONFIG_I: Configured from console by console term
+Enter configuration commands, one per line.  End with CNTL/Z.
+S3(config)#no ip domain-lookup
+S3(config)#service password-encryption
+S3(config)#enable secret class
+S3(config)#banner motd #
+Enter TEXT message.  End with the character '#'
+Unauthorized access is strictly prohibited. #
+S3(config)#Line con 0
+S3(config-line)#password cisco
+S3(config-line)#login
+S3(config-line)#logging synchronous
+S3(config-line)#line vty 0 15
+S3(config-line)#password cisco
+S3(config-line)#login
+S3(config-line)#exit
+ISP>
+ISP>
+

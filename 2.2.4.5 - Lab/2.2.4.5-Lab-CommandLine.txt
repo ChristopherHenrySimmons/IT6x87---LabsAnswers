@@ -1,0 +1,117 @@
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Users\Wifi>ipcong
+'ipcong' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Wifi>fig /all
+'fig' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Wifi>ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : PFLD520-06
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+
+Wireless LAN adapter Wireless Network Connection:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : pcsupport.ac.nz
+   Description . . . . . . . . . . . : Dell Wireless 1490 Dual Band WLAN Mini-Ca
+rd
+   Physical Address. . . . . . . . . : 00-16-CE-2D-EA-8A
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Ethernet adapter Local Area Connection:
+
+   Connection-specific DNS Suffix  . :
+   Description . . . . . . . . . . . : Broadcom 440x 10/100 Integrated Controlle
+r
+   Physical Address. . . . . . . . . : 00-15-C5-07-DE-87
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   IPv6 Address. . . . . . . . . . . : 2001:db8:a:0:c98d:62f3:cc8:c394(Preferred
+)
+   IPv6 Address. . . . . . . . . . . : 2001:db8:acad:a:c98d:62f3:cc8:c394(Prefer
+red)
+   Temporary IPv6 Address. . . . . . : 2001:db8:a:0:9592:b623:e309:68eb(Preferre
+d)
+   Temporary IPv6 Address. . . . . . : 2001:db8:acad:a:9592:b623:e309:68eb(Prefe
+rred)
+   Link-local IPv6 Address . . . . . : fe80::c98d:62f3:cc8:c394%12(Preferred)
+   Default Gateway . . . . . . . . . : fe80::ba38:61ff:fe92:f821%12
+   DNS Servers . . . . . . . . . . . : fec0:0:0:ffff::1%1
+                                       fec0:0:0:ffff::2%1
+                                       fec0:0:0:ffff::3%1
+   NetBIOS over Tcpip. . . . . . . . : Disabled
+
+Tunnel adapter Local Area Connection* 12:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+   Description . . . . . . . . . . . : Microsoft Teredo Tunneling Adapter
+   Physical Address. . . . . . . . . : 00-00-00-00-00-00-00-E0
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+
+C:\Users\Wifi> ping -6 fe80::c98d:62f3:cc8:c394%
+Ping request could not find host fe80::c98d:62f3:cc8:c394%. Please check the nam
+e and try again.
+
+C:\Users\Wifi> ping -6 fe80::ba38:61ff:fe92:f821%12
+
+Pinging fe80::ba38:61ff:fe92:f821%12 with 32 bytes of data:
+Reply from fe80::ba38:61ff:fe92:f821%12: time<1ms
+Reply from fe80::ba38:61ff:fe92:f821%12: time<1ms
+Reply from fe80::ba38:61ff:fe92:f821%12: time<1ms
+Reply from fe80::ba38:61ff:fe92:f821%12: time<1ms
+
+Ping statistics for fe80::ba38:61ff:fe92:f821%12:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+C:\Users\Wifi>
+C:\Users\Wifi>ping -6 2001:db8:acad:b:edcb:75bb:4840:955
+
+Pinging 2001:db8:acad:b:edcb:75bb:4840:955 with 32 bytes of data:
+Reply from 2001:db8:acad:b:edcb:75bb:4840:955: time=20ms
+Reply from 2001:db8:acad:b:edcb:75bb:4840:955: time=12ms
+Reply from 2001:db8:acad:b:edcb:75bb:4840:955: time=12ms
+Reply from 2001:db8:acad:b:edcb:75bb:4840:955: time=12ms
+
+Ping statistics for 2001:db8:acad:b:edcb:75bb:4840:955:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 12ms, Maximum = 20ms, Average = 14ms
+
+C:\Users\Wifi>ping -6 2001:db8:acad:b:edcb:75bb:4840:955
+
+Pinging 2001:db8:acad:b:edcb:75bb:4840:955 with 32 bytes of data:
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+
+Ping statistics for 2001:db8:acad:b:edcb:75bb:4840:955:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+
+C:\Users\Wifi>ping -6 2001:db8:acad:b:edcb:75bb:4840:955
+
+Pinging 2001:db8:acad:b:edcb:75bb:4840:955 with 32 bytes of data:
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+
+Ping statistics for 2001:db8:acad:b:edcb:75bb:4840:955:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+
+C:\Users\Wifi>

@@ -1,0 +1,2376 @@
+
+Router>
+Router>enable
+Router#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname R1
+R1(config)# ipv6 unicast-routing
+R1(config)# interface g0/1
+R1(config-if)# ipv6 2001:DB8:ACAD:A::/64 eui-64
+                    ^
+% Invalid input detected at '^' marker.
+
+R1(config-if)# ipv6 address 2001:DB8:ACAD:A::/64 eui-64
+R1(config-if)# no shutdown
+R1(config-if)# in
+Mar  5 23:42:48.787: %LINK-3-UPDOWN: Interface GigabitEthernet0/1,                                                                        changed state to down
+Mar  5 23:42:51.515: %LINK-3-UPDOWN: Interface GigabitEthernet0/1,                                                                        changed state to up
+Mar  5 23:42:52.515: %LINEPROTO-5-UPDOWN: Line protocol on Interfa                                                                       ce GigabitEthernet0/1, changed state to up
+% Incomplete command.
+
+R1(config)# interface g0/1
+R1(config-if)# interface serial 0/0/1
+R1(config-if)# ipv6 address FC00::1/64
+R1(config-if)# no shutdown
+R1(config-if)# exit
+R1(config)#
+Mar  5 23:43:53.739: %LINK-3-UPDOWN: Interface Serial0/0/1, change                                                                       d state to down
+R1(config)# exit
+R1#
+Mar  5 23:45:24.635: %SYS-5-CONFIG_I: Configured from console by c                                                                       onsole
+R1# tera term
+       ^
+% Invalid input detected at '^' marker.
+
+R1# tera term 2001:DB8:ACAD:B::/64 eui-64
+       ^
+% Invalid input detected at '^' marker.
+
+R1#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+R1>enable
+R1#config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#
+Mar  6 00:04:39.859: %LINK-3-UPDOWN: Interface Serial0/0/1, change                                                                       d state to up
+Mar  6 00:04:40.859: %LINEPROTO-5-UPDOWN: Line protocol on Interfa                                                                       ce Serial0/0/1, changed state to up
+R1(config)#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+Mar  6 00:15:06.267: %SYS-5-CONFIG_I: Configured from console by c                                                                       onsole
+R1>enable
+R1#show ip int b
+Interface                  IP-Address      OK? Method Status                Protocol
+Embedded-Service-Engine0/0 unassigned      YES unset  administratively down down
+GigabitEthernet0/0         unassigned      YES unset  administratively down down
+GigabitEthernet0/1         unassigned      YES unset  up                    up
+Serial0/0/0                unassigned      YES unset  administratively down down
+Serial0/0/1                unassigned      YES unset  up                    up
+R1#show start
+Using 1386 out of 262136 bytes
+!
+! Last configuration change at 23:29:50 UTC Mon Mar 5 2018
+! NVRAM config last updated at 23:30:56 UTC Mon Mar 5 2018
+! NVRAM config last updated at 23:30:56 UTC Mon Mar 5 2018
+version 15.1
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+memory-size iomem 15
+!
+ipv6 unicast-routing
+ipv6 cef
+ip source-route
+ip cef
+!
+!
+!
+!
+!
+!
+multilink bundle-name authenticated
+!
+!
+crypto pki token default removal timeout 0
+!
+!
+license udi pid CISCO2901/K9 sn FGL180621LZ
+!
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Embedded-Service-Engine0/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ ipv6 address 2001:DB8:A::/64 eui-64
+!
+interface Serial0/0/0
+ no ip address
+ shutdown
+ clock rate 2000000
+!
+interface Serial0/0/1
+ no ip address
+ ipv6 address FC00::1/64
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+line con 0
+line aux 0
+line 2
+ no activation-character
+ no exec
+ transport preferred none
+ transport input all
+ transport output pad telnet rlogin lapb-ta mop udptn v120 ssh
+ stopbits 1
+line vty 0 4
+ login
+ transport input all
+!
+scheduler allocate 20000 1000
+end
+
+R1#
+Mar  6 00:21:45.411: %LINK-3-UPDOWN: Interface Serial0/0/1, changed state to down
+Mar  6 00:21:46.411: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/1, changed state to down
+Mar  6 00:21:48.239: %LINK-3-UPDOWN: Interface Serial0/0/1, changed state to up
+Mar  6 00:21:49.239: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/1, changed state to up
+Mar  6 00:22:07.399: %LINK-3-UPDOWN: Interface Serial0/0/1, changed state to down
+Mar  6 00:22:08.399: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/1, changed state to down
+R1#enable
+R1#show start
+Using 1386 out of 262136 bytes
+!
+! Last configuration change at 23:29:50 UTC Mon Mar 5 2018
+! NVRAM config last updated at 23:30:56 UTC Mon Mar 5 2018
+! NVRAM config last updated at 23:30:56 UTC Mon Mar 5 2018
+version 15.1
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+memory-size iomem 15
+!
+ipv6 unicast-routing
+ipv6 cef
+ip source-route
+ip cef
+!
+!
+!
+!
+!
+!
+multilink bundle-name authenticated
+!
+!
+crypto pki token default removal timeout 0
+!
+!
+license udi pid CISCO2901/K9 sn FGL180621LZ
+!
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Embedded-Service-Engine0/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ ipv6 address 2001:DB8:A::/64 eui-64
+!
+interface Serial0/0/0
+ no ip address
+ shutdown
+ clock rate 2000000
+!
+interface Serial0/0/1
+ no ip address
+ ipv6 address FC00::1/64
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+line con 0
+line aux 0
+line 2
+ no activation-character
+ no exec
+ transport preferred none
+ transport input all
+ transport output pad telnet rlogin lapb-ta mop udptn v120 ssh
+ stopbits 1
+line vty 0 4
+ login
+ transport input all
+!
+scheduler allocate 20000 1000
+end
+
+R1#enable
+R1#show ip int b
+Interface                  IP-Address      OK? Method Status                Protocol
+Embedded-Service-Engine0/0 unassigned      YES unset  administratively down down
+GigabitEthernet0/0         unassigned      YES unset  administratively down down
+GigabitEthernet0/1         unassigned      YES unset  up                    up
+Serial0/0/0                unassigned      YES unset  administratively down down
+Serial0/0/1                unassigned      YES unset  down                  down
+R1#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)# interface 0/0/1
+                      ^
+% Invalid input detected at '^' marker.
+
+R1(config)# interface g0/1
+R1(config-if)# interface 0/0/1
+                         ^
+% Invalid input detected at '^' marker.
+
+R1(config)# interface serial 0/0/1
+R1(config-if)#
+Mar  6 00:24:51.179: %LINK-3-UPDOWN: Interface Serial0/0/1, changed state to up
+Mar  6 00:24:52.179: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/1, changed state to up
+R1(config-if)# no shutdown
+R1(config-if)# exit
+R1(config)# exit
+R1#
+Mar  6 00:25:21.919: %SYS-5-CONFIG_I: Configured from console by console
+R1# show ip int b
+Interface                  IP-Address      OK? Method Status                Protocol
+Embedded-Service-Engine0/0 unassigned      YES unset  administratively down down
+GigabitEthernet0/0         unassigned      YES unset  administratively down down
+GigabitEthernet0/1         unassigned      YES unset  up                    up
+Serial0/0/0                unassigned      YES unset  administratively down down
+Serial0/0/1                unassigned      YES unset  up                    up
+R1#
+R1#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+Router>
+Router>enable
+Router#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname R1
+R1(config)# ipv6 unicast-routing
+R1(config)# interface g0/1
+R1(config-if)# ipv6 2001:DB8:ACAD:A::/64 eui-64
+                    ^
+% Invalid input detected at '^' marker.
+
+R1(config-if)# ipv6 address 2001:DB8:ACAD:A::/64 eui-64
+R1(config-if)# no shutdown
+R1(config-if)# in
+Mar  5 23:42:48.787: %LINK-3-UPDOWN: Interface GigabitEthernet0/1 changed state to down
+Mar  5 23:42:51.515: %LINK-3-UPDOWN: Interface GigabitEthernet0/1 changed state to up
+Mar  5 23:42:52.515: %LINEPROTO-5-UPDOWN: Line protocol on Interfce GigabitEthernet0/1, changed state to up
+% Incomplete command.
+
+R1(config)# interface g0/1
+R1(config-if)# interface serial 0/0/1
+R1(config-if)# ipv6 address FC00::1/64
+R1(config-if)# no shutdown
+R1(config-if)# exit
+R1(config)#
+Mar  5 23:43:53.739: %LINK-3-UPDOWN: Interface Serial0/0/1, changd state to down
+R1(config)# exit
+R1#
+Mar  5 23:45:24.635: %SYS-5-CONFIG_I: Configured from console by onsole
+R1# tera term
+       ^
+% Invalid input detected at '^' marker.
+
+R1# tera term 2001:DB8:ACAD:B::/64 eui-64
+       ^
+% Invalid input detected at '^' marker.
+
+R1#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+R1>enable
+R1#config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#
+Mar  6 00:04:39.859: %LINK-3-UPDOWN: Interface Serial0/0/1, changd state to up
+Mar  6 00:04:40.859: %LINEPROTO-5-UPDOWN: Line protocol on Interfce Serial0/0/1, changed state to up
+R1(config)#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+Mar  6 00:15:06.267: %SYS-5-CONFIG_I: Configured from console by onsole
+R1>enable
+R1#show ip int b
+Interface                  IP-Address      OK? Method Status
+Embedded-Service-Engine0/0 unassigned      YES unset  administrat
+GigabitEthernet0/0         unassigned      YES unset  administrat
+GigabitEthernet0/1         unassigned      YES unset  up
+Serial0/0/0                unassigned      YES unset  administrat
+Serial0/0/1                unassigned      YES unset  up
+R1#show start
+Using 1386 out of 262136 bytes
+!
+! Last configuration change at 23:29:50 UTC Mon Mar 5 2018
+! NVRAM config last updated at 23:30:56 UTC Mon Mar 5 2018
+! NVRAM config last updated at 23:30:56 UTC Mon Mar 5 2018
+version 15.1
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+memory-size iomem 15
+!
+ipv6 unicast-routing
+ipv6 cef
+ip source-route
+ip cef
+!
+!
+!
+!
+!
+!
+multilink bundle-name authenticated
+!
+!
+crypto pki token default removal timeout 0
+!
+!
+license udi pid CISCO2901/K9 sn FGL180621LZ
+!
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Embedded-Service-Engine0/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ ipv6 address 2001:DB8:A::/64 eui-64
+!
+interface Serial0/0/0
+ no ip address
+ shutdown
+ clock rate 2000000
+!
+interface Serial0/0/1
+ no ip address
+ ipv6 address FC00::1/64
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+line con 0
+line aux 0
+line 2
+ no activation-character
+ no exec
+ transport preferred none
+ transport input all
+ transport output pad telnet rlogin lapb-ta mop udptn v120 ssh
+ stopbits 1
+line vty 0 4
+ login
+ transport input all
+!
+scheduler allocate 20000 1000
+end
+
+R1#
+Mar  6 00:21:45.411: %LINK-3-UPDOWN: Interface Serial0/0/1, chang
+Mar  6 00:21:46.411: %LINEPROTO-5-UPDOWN: Line protocol on Interf
+Mar  6 00:21:48.239: %LINK-3-UPDOWN: Interface Serial0/0/1, chang
+Mar  6 00:21:49.239: %LINEPROTO-5-UPDOWN: Line protocol on Interf
+Mar  6 00:22:07.399: %LINK-3-UPDOWN: Interface Serial0/0/1, chang
+Mar  6 00:22:08.399: %LINEPROTO-5-UPDOWN: Line protocol on Interf
+R1#enable
+R1#show start
+Using 1386 out of 262136 bytes
+!
+! Last configuration change at 23:29:50 UTC Mon Mar 5 2018
+! NVRAM config last updated at 23:30:56 UTC Mon Mar 5 2018
+! NVRAM config last updated at 23:30:56 UTC Mon Mar 5 2018
+version 15.1
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+memory-size iomem 15
+!
+ipv6 unicast-routing
+ipv6 cef
+ip source-route
+ip cef
+!
+!
+!
+!
+!
+!
+multilink bundle-name authenticated
+!
+!
+crypto pki token default removal timeout 0
+!
+!
+license udi pid CISCO2901/K9 sn FGL180621LZ
+!
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Embedded-Service-Engine0/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ ipv6 address 2001:DB8:A::/64 eui-64
+!
+interface Serial0/0/0
+ no ip address
+ shutdown
+ clock rate 2000000
+!
+interface Serial0/0/1
+ no ip address
+ ipv6 address FC00::1/64
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+line con 0
+line aux 0
+line 2
+ no activation-character
+ no exec
+ transport preferred none
+ transport input all
+ transport output pad telnet rlogin lapb-ta mop udptn v120 ssh
+ stopbits 1
+line vty 0 4
+ login
+ transport input all
+!
+scheduler allocate 20000 1000
+end
+
+R1#enable
+R1#show ip int b
+Interface                  IP-Address      OK? Method Status
+Embedded-Service-Engine0/0 unassigned      YES unset  administrat
+GigabitEthernet0/0         unassigned      YES unset  administrat
+GigabitEthernet0/1         unassigned      YES unset  up
+Serial0/0/0                unassigned      YES unset  administrat
+Serial0/0/1                unassigned      YES unset  down
+R1#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)# interface 0/0/1
+                      ^
+% Invalid input detected at '^' marker.
+
+R1(config)# interface g0/1
+R1(config-if)# interface 0/0/1
+                         ^
+% Invalid input detected at '^' marker.
+
+R1(config)# interface serial 0/0/1
+R1(config-if)#
+Mar  6 00:24:51.179: %LINK-3-UPDOWN: Interface Serial0/0/1, chang
+Mar  6 00:24:52.179: %LINEPROTO-5-UPDOWN: Line protocol on Interf
+R1(config-if)# no shutdown
+R1(config-if)# exit
+R1(config)# exit
+R1#
+Mar  6 00:25:21.919: %SYS-5-CONFIG_I: Configured from console by
+R1# show ip int b
+Interface                  IP-Address      OK? Method Status
+Embedded-Service-Engine0/0 unassigned      YES unset  administrat
+GigabitEthernet0/0         unassigned      YES unset  administrat
+GigabitEthernet0/1         unassigned      YES unset  up
+Serial0/0/0                unassigned      YES unset  administrat
+Serial0/0/1                unassigned      YES unset  up
+R1#
+R1#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+R1>enable
+R1#config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#
+R1(config)#Router>
+                 ^
+% Invalid input detected at '^' marker.
+
+R1(config)#Router>enable
+                 ^
+% Invalid input detected at '^' marker.
+
+R1(config)#Router#config terminal
+                 ^
+% Invalid input detected at '^' marker.
+
+R1(config)#Enter configuration commands, one per line.  End with
+             ^
+% Invalid input detected at '^' marker.
+
+R1(config)#Router(config)#hostname R1
+                 ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config)# ipv6 unicast-routing
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config)# interface g0/1
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config-if)# ipv6 2001:DB8:ACAD:A::/64 eui-64
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#                    ^
+                               ^
+% Invalid input detected at '^' marker.
+
+R1(config)#% Invalid input detected at '^' marker.
+           ^
+% Invalid input detected at '^' marker.
+
+R1(config)#
+R1(config)#R1(config-if)# ipv6 address 2001:DB8:ACAD:A::/64 eui-6
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config-if)# no shutdown
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config-if)# in
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#$                                     changed state to
+Mar  5 23:42:48.787: %LINK-3-UPDOWN: Interface GigabitEthernet0/1    changed state to down
+
+% Invalid input detected at '^' marker.
+
+R1(config)#$                                     changed state to
+Mar  5 23:42:51.515: %LINK-3-UPDOWN: Interface GigabitEthernet0/1    changed state to up
+
+% Invalid input detected at '^' marker.
+
+R1(config)#$                ce GigabitEthernet0/1, changed state
+Mar  5 23:42:52.515: %LINEPROTO-5-UPDOWN: Line protocol on Interf   ce GigabitEthernet0/1,
+changed state to up
+
+% Invalid input detected at '^' marker.
+
+R1(config)#% Incomplete command.
+           ^
+% Invalid input detected at '^' marker.
+
+R1(config)#
+R1(config)#R1(config)# interface g0/1
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config-if)# interface serial 0/0/1
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config-if)# ipv6 address FC00::1/64
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config-if)# no shutdown
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config-if)# exit
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config)#
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#$                                              d state
+Mar  5 23:43:53.739: %LINK-3-UPDOWN: Interface Serial0/0/1, chang   d state to down
+
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config)# exit
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1#
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#$
+Mar  5 23:45:24.635: %SYS-5-CONFIG_I: Configured from console by    onsole
+
+% Invalid input detected at '^' marker.
+
+R1(config)#R1# tera term
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#       ^
+                  ^
+% Invalid input detected at '^' marker.
+
+R1(config)#% Invalid input detected at '^' marker.
+           ^
+% Invalid input detected at '^' marker.
+
+R1(config)#
+R1(config)#R1# tera term 2001:DB8:ACAD:B::/64 eui-64
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#       ^
+                  ^
+% Invalid input detected at '^' marker.
+
+R1(config)#% Invalid input detected at '^' marker.
+           ^
+% Invalid input detected at '^' marker.
+
+R1(config)#
+R1(config)#R1#
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#R1 con0 is now available
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#Press RETURN to get started.
+             ^
+% Invalid input detected at '^' marker.
+
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#R1>enable
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1#config term
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#Enter configuration commands, one per line.  End with
+             ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config)#
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#$                                              d state
+Mar  6 00:04:39.859: %LINK-3-UPDOWN: Interface Serial0/0/1, chang   d state to up
+
+% Invalid input detected at '^' marker.
+
+R1(config)#$                          ce Serial0/0/1, changed sta
+Mar  6 00:04:40.859: %LINEPROTO-5-UPDOWN: Line protocol on Interf   ce Serial0/0/1, changed
+ state to up
+
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config)#
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#R1 con0 is now available
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#Press RETURN to get started.
+             ^
+% Invalid input detected at '^' marker.
+
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#$
+Mar  6 00:15:06.267: %SYS-5-CONFIG_I: Configured from console by    onsole
+
+% Invalid input detected at '^' marker.
+
+R1(config)#R1>enable
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1#show ip int b
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#Interface                  IP-Address      OK?
+% Unrecognized command
+R1(config)#$      IP-Address      OK Method Status
+Interface                  IP-Address      OK Method Status
+
+% Invalid input detected at '^' marker.
+
+R1(config)#$ne0/0 unassigned      YES unset  administratively dow
+Embedded-Service-Engine0/0 unassigned      YES unset  administrat
+
+% Invalid input detected at '^' marker.
+
+R1(config)#$      unassigned      YES unset  administratively dow
+GigabitEthernet0/0         unassigned      YES unset  administrat
+
+% Invalid input detected at '^' marker.
+
+R1(config)#$signed      YES unset  up               tratively dow
+GigabitEthernet0/1         unassigned      YES unset  up
+
+% Invalid input detected at '^' marker.
+
+R1(config)#Serial0/0/1                unassigned      YES unseing
+              ^
+% Invalid input detected at '^' marker.
+
+R1(config)#ipv6 cef
+R1(config)#ip source-route
+R1(config)#ip cef
+R1(config)#!
+R1(config)#!
+R1(config)#!
+R1(config)#!
+R1(config)#!
+R1(config)#!
+R1(config)#multilink
+R1#
+Mar  6 00:45:07.383: %SYS-5-CONFIG_I: Configured from console by
+R1#sh
+R1#show ipv
+R1#show ipv6 add
+R1#show ipv6 ad
+R1#show ipv6 in
+R1#show ipv6 int
+R1#show ipv6 interface
+GigabitEthernet0/1 is up, line protocol is up
+  IPv6 is enabled, link-local address is FE80::BA38:61FF:FE92:F82
+  No Virtual link-local address(es):
+  Global unicast address(es):
+    2001:DB8:ACAD:A:BA38:61FF:FE92:F821, subnet is 2001:DB8:ACAD:
+  Joined group address(es):
+    FF02::1
+    FF02::2
+    FF02::1:FF92:F821
+  MTU is 1500 bytes
+  ICMP error messages limited to one every 100 milliseconds
+  ICMP redirects are enabled
+  ICMP unreachables are sent
+  ND DAD is enabled, number of DAD attempts: 1
+  ND reachable time is 30000 milliseconds (using 30000)
+  ND advertised reachable time is 0 (unspecified)
+  ND advertised retransmit interval is 0 (unspecified)
+  ND router advertisements are sent every 200 seconds
+  ND router advertisements live for 1800 seconds
+  ND advertised default router preference is Medium
+  Hosts use stateless autoconfig for addresses.
+Serial0/0/1 is up, line protocol is up
+  IPv6 is enabled, link-local address is FE80::BA38:61FF:FE92:F82
+  No Virtual link-local address(es):
+  Global unicast address(es):
+    FC00::1, subnet is FC00::/64
+  Joined group address(es):
+    FF02::1
+    FF02::2
+    FF02::1:FF00:1
+    FF02::1:FF92:F820
+  MTU is 1500 bytes
+  ICMP error messages limited to one every 100 milliseconds
+  ICMP redirects are enabled
+  ICMP unreachables are sent
+  ND DAD is enabled, number of DAD attempts: 1
+  ND reachable time is 30000 milliseconds (using 30000)
+  ND RAs are suppressed (periodic)
+  Hosts use stateless autoconfig for addresses.
+R1#config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#ipv6 route 2001:DB8:ACAD:B::/64 s 0/0/1
+R1(config)#no ipv6 route 2001:DB8:ACAD:B::/64 s 0/0/1
+R1(config)#
+
+Router>
+Router>enable
+Router#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname R1
+R1(config)# ipv6 unicast-routing
+R1(config)# interface g0/1
+R1(config-if)# ipv6 2001:DB8:ACAD:A::/64 eui-64
+                    ^
+% Invalid input detected at '^' marker.
+
+R1(config-if)# ipv6 address 2001:DB8:ACAD:A::/64 eui-64
+R1(config-if)# no shutdown
+R1(config-if)# in
+Mar  5 23:42:48.787: %LINK-3-UPDOWN: Interface GigabitEthernet0/1,                                changed state to down
+Mar  5 23:42:51.515: %LINK-3-UPDOWN: Interface GigabitEthernet0/1,                                changed state to up
+Mar  5 23:42:52.515: %LINEPROTO-5-UPDOWN: Line protocol on Interfa                               ce GigabitEthernet0/1, changed state to up
+% Incomplete command.
+
+R1(config)# interface g0/1
+R1(config-if)# interface serial 0/0/1
+R1(config-if)# ipv6 address FC00::1/64
+R1(config-if)# no shutdown
+R1(config-if)# exit
+R1(config)#
+Mar  5 23:43:53.739: %LINK-3-UPDOWN: Interface Serial0/0/1, change                               d state to down
+R1(config)# exit
+R1#
+Mar  5 23:45:24.635: %SYS-5-CONFIG_I: Configured from console by c                               onsole
+R1# tera term
+       ^
+% Invalid input detected at '^' marker.
+
+R1# tera term 2001:DB8:ACAD:B::/64 eui-64
+       ^
+% Invalid input detected at '^' marker.
+
+R1#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+R1>enable
+R1#config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#
+Mar  6 00:04:39.859: %LINK-3-UPDOWN: Interface Serial0/0/1, change                               d state to up
+Mar  6 00:04:40.859: %LINEPROTO-5-UPDOWN: Line protocol on Interfa                               ce Serial0/0/1, changed state to up
+R1(config)#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+Mar  6 00:15:06.267: %SYS-5-CONFIG_I: Configured from console by c                               onsole
+R1>enable
+R1#show ip int b
+Interface                  IP-Address      OK? Method Status                Protocol
+Embedded-Service-Engine0/0 unassigned      YES unset  administratively down down
+GigabitEthernet0/0         unassigned      YES unset  administratively down down
+GigabitEthernet0/1         unassigned      YES unset  up                    up
+Serial0/0/0                unassigned      YES unset  administratively down down
+Serial0/0/1                unassigned      YES unset  up                    up
+R1#show start
+Using 1386 out of 262136 bytes
+!
+! Last configuration change at 23:29:50 UTC Mon Mar 5 2018
+! NVRAM config last updated at 23:30:56 UTC Mon Mar 5 2018
+! NVRAM config last updated at 23:30:56 UTC Mon Mar 5 2018
+version 15.1
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+memory-size iomem 15
+!
+ipv6 unicast-routing
+ipv6 cef
+ip source-route
+ip cef
+!
+!
+!
+!
+!
+!
+multilink bundle-name authenticated
+!
+!
+crypto pki token default removal timeout 0
+!
+!
+license udi pid CISCO2901/K9 sn FGL180621LZ
+!
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Embedded-Service-Engine0/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ ipv6 address 2001:DB8:A::/64 eui-64
+!
+interface Serial0/0/0
+ no ip address
+ shutdown
+ clock rate 2000000
+!
+interface Serial0/0/1
+ no ip address
+ ipv6 address FC00::1/64
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+line con 0
+line aux 0
+line 2
+ no activation-character
+ no exec
+ transport preferred none
+ transport input all
+ transport output pad telnet rlogin lapb-ta mop udptn v120 ssh
+ stopbits 1
+line vty 0 4
+ login
+ transport input all
+!
+scheduler allocate 20000 1000
+end
+
+R1#
+Mar  6 00:21:45.411: %LINK-3-UPDOWN: Interface Serial0/0/1, changed state to down
+Mar  6 00:21:46.411: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/1, changed state t
+Mar  6 00:21:48.239: %LINK-3-UPDOWN: Interface Serial0/0/1, changed state to up
+Mar  6 00:21:49.239: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/1, changed state t
+Mar  6 00:22:07.399: %LINK-3-UPDOWN: Interface Serial0/0/1, changed state to down
+Mar  6 00:22:08.399: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/1, changed state t
+R1#enable
+R1#show start
+Using 1386 out of 262136 bytes
+!
+! Last configuration change at 23:29:50 UTC Mon Mar 5 2018
+! NVRAM config last updated at 23:30:56 UTC Mon Mar 5 2018
+! NVRAM config last updated at 23:30:56 UTC Mon Mar 5 2018
+version 15.1
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+memory-size iomem 15
+!
+ipv6 unicast-routing
+ipv6 cef
+ip source-route
+ip cef
+!
+!
+!
+!
+!
+!
+multilink bundle-name authenticated
+!
+!
+crypto pki token default removal timeout 0
+!
+!
+license udi pid CISCO2901/K9 sn FGL180621LZ
+!
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Embedded-Service-Engine0/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ ipv6 address 2001:DB8:A::/64 eui-64
+!
+interface Serial0/0/0
+ no ip address
+ shutdown
+ clock rate 2000000
+!
+interface Serial0/0/1
+ no ip address
+ ipv6 address FC00::1/64
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+line con 0
+line aux 0
+line 2
+ no activation-character
+ no exec
+ transport preferred none
+ transport input all
+ transport output pad telnet rlogin lapb-ta mop udptn v120 ssh
+ stopbits 1
+line vty 0 4
+ login
+ transport input all
+!
+scheduler allocate 20000 1000
+end
+
+R1#enable
+R1#show ip int b
+Interface                  IP-Address      OK? Method Status                Protocol
+Embedded-Service-Engine0/0 unassigned      YES unset  administratively down down
+GigabitEthernet0/0         unassigned      YES unset  administratively down down
+GigabitEthernet0/1         unassigned      YES unset  up                    up
+Serial0/0/0                unassigned      YES unset  administratively down down
+Serial0/0/1                unassigned      YES unset  down                  down
+R1#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)# interface 0/0/1
+                      ^
+% Invalid input detected at '^' marker.
+
+R1(config)# interface g0/1
+R1(config-if)# interface 0/0/1
+                         ^
+% Invalid input detected at '^' marker.
+
+R1(config)# interface serial 0/0/1
+R1(config-if)#
+Mar  6 00:24:51.179: %LINK-3-UPDOWN: Interface Serial0/0/1, changed state to up
+Mar  6 00:24:52.179: %LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/1, changed state t
+R1(config-if)# no shutdown
+R1(config-if)# exit
+R1(config)# exit
+R1#
+Mar  6 00:25:21.919: %SYS-5-CONFIG_I: Configured from console by console
+R1# show ip int b
+Interface                  IP-Address      OK? Method Status                Protocol
+Embedded-Service-Engine0/0 unassigned      YES unset  administratively down down
+GigabitEthernet0/0         unassigned      YES unset  administratively down down
+GigabitEthernet0/1         unassigned      YES unset  up                    up
+Serial0/0/0                unassigned      YES unset  administratively down down
+Serial0/0/1                unassigned      YES unset  up                    up
+R1#
+R1#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+R1>enable
+R1#config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#
+R1(config)#Router>
+                 ^
+% Invalid input detected at '^' marker.
+
+R1(config)#Router>enable
+                 ^
+% Invalid input detected at '^' marker.
+
+R1(config)#Router#config terminal
+                 ^
+% Invalid input detected at '^' marker.
+
+R1(config)#Enter configuration commands, one per line.  End with CNTL/Z.
+             ^
+% Invalid input detected at '^' marker.
+
+R1(config)#Router(config)#hostname R1
+                 ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config)# ipv6 unicast-routing
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config)# interface g0/1
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config-if)# ipv6 2001:DB8:ACAD:A::/64 eui-64
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#                    ^
+                               ^
+% Invalid input detected at '^' marker.
+
+R1(config)#% Invalid input detected at '^' marker.
+           ^
+% Invalid input detected at '^' marker.
+
+R1(config)#
+R1(config)#R1(config-if)# ipv6 address 2001:DB8:ACAD:A::/64 eui-64
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config-if)# no shutdown
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config-if)# in
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#$                                     changed state to down
+Mar  5 23:42:48.787: %LINK-3-UPDOWN: Interface GigabitEthernet0/1,                ^                  changed state to down
+
+% Invalid input detected at '^' marker.
+
+R1(config)#$                                     changed state to up
+Mar  5 23:42:51.515: %LINK-3-UPDOWN: Interface GigabitEthernet0/1,                ^                  changed state to up
+
+% Invalid input detected at '^' marker.
+
+R1(config)#$                ce GigabitEthernet0/1, changed state to up
+Mar  5 23:42:52.515: %LINEPROTO-5-UPDOWN: Line protocol on Interfa                ^                 ce GigabitEthernet0/1,
+changed state to up
+
+% Invalid input detected at '^' marker.
+
+R1(config)#% Incomplete command.
+           ^
+% Invalid input detected at '^' marker.
+
+R1(config)#
+R1(config)#R1(config)# interface g0/1
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config-if)# interface serial 0/0/1
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config-if)# ipv6 address FC00::1/64
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config-if)# no shutdown
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config-if)# exit
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config)#
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#$                                              d state to down
+Mar  5 23:43:53.739: %LINK-3-UPDOWN: Interface Serial0/0/1, change                ^                 d state to down
+
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config)# exit
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1#
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#$                                                        onsole
+Mar  5 23:45:24.635: %SYS-5-CONFIG_I: Configured from console by c                ^                 onsole
+
+% Invalid input detected at '^' marker.
+
+R1(config)#R1# tera term
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#       ^
+                  ^
+% Invalid input detected at '^' marker.
+
+R1(config)#% Invalid input detected at '^' marker.
+           ^
+% Invalid input detected at '^' marker.
+
+R1(config)#
+R1(config)#R1# tera term 2001:DB8:ACAD:B::/64 eui-64
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#       ^
+                  ^
+% Invalid input detected at '^' marker.
+
+R1(config)#% Invalid input detected at '^' marker.
+           ^
+% Invalid input detected at '^' marker.
+
+R1(config)#
+R1(config)#R1#
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#R1 con0 is now available
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#Press RETURN to get started.
+             ^
+% Invalid input detected at '^' marker.
+
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#R1>enable
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1#config term
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#Enter configuration commands, one per line.  End with CNTL/Z.
+             ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config)#
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#$                                              d state to up
+Mar  6 00:04:39.859: %LINK-3-UPDOWN: Interface Serial0/0/1, change                ^                 d state to up
+
+% Invalid input detected at '^' marker.
+
+R1(config)#$                          ce Serial0/0/1, changed state to up
+Mar  6 00:04:40.859: %LINEPROTO-5-UPDOWN: Line protocol on Interfa                ^                 ce Serial0/0/1, changed
+ state to up
+
+% Invalid input detected at '^' marker.
+
+R1(config)#R1(config)#
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#R1 con0 is now available
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#Press RETURN to get started.
+             ^
+% Invalid input detected at '^' marker.
+
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#$                                                        onsole
+Mar  6 00:15:06.267: %SYS-5-CONFIG_I: Configured from console by c                ^                 onsole
+
+% Invalid input detected at '^' marker.
+
+R1(config)#R1>enable
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#R1#show ip int b
+            ^
+% Invalid input detected at '^' marker.
+
+R1(config)#Interface                  IP-Address      OK?
+% Unrecognized command
+R1(config)#$      IP-Address      OK Method Status                Protocol
+Interface                  IP-Address      OK Method Status                Proto
+
+% Invalid input detected at '^' marker.
+
+R1(config)#$ne0/0 unassigned      YES unset  administratively down down
+Embedded-Service-Engine0/0 unassigned      YES unset  administratively down down  ^
+
+% Invalid input detected at '^' marker.
+
+R1(config)#$      unassigned      YES unset  administratively down down
+GigabitEthernet0/0         unassigned      YES unset  administratively down down ^
+
+% Invalid input detected at '^' marker.
+
+R1(config)#$signed      YES unset  up               tratively down down
+GigabitEthernet0/1         unassigned      YES unset  up               tratively ^ down down
+
+% Invalid input detected at '^' marker.
+
+R1(config)#Serial0/0/1                unassigned      YES unseing
+              ^
+% Invalid input detected at '^' marker.
+
+R1(config)#ipv6 cef
+R1(config)#ip source-route
+R1(config)#ip cef
+R1(config)#!
+R1(config)#!
+R1(config)#!
+R1(config)#!
+R1(config)#!
+R1(config)#!
+R1(config)#multilink
+R1#
+Mar  6 00:45:07.383: %SYS-5-CONFIG_I: Configured from console by console
+R1#sh
+R1#show ipv
+R1#show ipv6 add
+R1#show ipv6 ad
+R1#show ipv6 in
+R1#show ipv6 int
+R1#show ipv6 interface
+GigabitEthernet0/1 is up, line protocol is up
+  IPv6 is enabled, link-local address is FE80::BA38:61FF:FE92:F821
+  No Virtual link-local address(es):
+  Global unicast address(es):
+    2001:DB8:ACAD:A:BA38:61FF:FE92:F821, subnet is 2001:DB8:ACAD:A::/64 [EUI]
+  Joined group address(es):
+    FF02::1
+    FF02::2
+    FF02::1:FF92:F821
+  MTU is 1500 bytes
+  ICMP error messages limited to one every 100 milliseconds
+  ICMP redirects are enabled
+  ICMP unreachables are sent
+  ND DAD is enabled, number of DAD attempts: 1
+  ND reachable time is 30000 milliseconds (using 30000)
+  ND advertised reachable time is 0 (unspecified)
+  ND advertised retransmit interval is 0 (unspecified)
+  ND router advertisements are sent every 200 seconds
+  ND router advertisements live for 1800 seconds
+  ND advertised default router preference is Medium
+  Hosts use stateless autoconfig for addresses.
+Serial0/0/1 is up, line protocol is up
+  IPv6 is enabled, link-local address is FE80::BA38:61FF:FE92:F820
+  No Virtual link-local address(es):
+  Global unicast address(es):
+    FC00::1, subnet is FC00::/64
+  Joined group address(es):
+    FF02::1
+    FF02::2
+    FF02::1:FF00:1
+    FF02::1:FF92:F820
+  MTU is 1500 bytes
+  ICMP error messages limited to one every 100 milliseconds
+  ICMP redirects are enabled
+  ICMP unreachables are sent
+  ND DAD is enabled, number of DAD attempts: 1
+  ND reachable time is 30000 milliseconds (using 30000)
+  ND RAs are suppressed (periodic)
+  Hosts use stateless autoconfig for addresses.
+R1#config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#ipv6 route 2001:DB8:ACAD:B::/64 s 0/0/1
+R1(config)#no ipv6 route 2001:DB8:ACAD:B::/64 s 0/0/1
+R1(config)#ipv6 route 2001:DB8:ACAD:B::/64 FC))::2
+                                             ^
+% Invalid input detected at '^' marker.
+
+R1(config)#ipv6 route 2001:DB8:ACAD:B::/64 FC00::2
+R1(config)#exit
+R1#
+Mar  6 00:59:41.735: %SYS-5-CONFIG_I: Configured from console by                                 console
+R1#show ip int
+Embedded-Service-Engine0/0 is administratively down, line protoco                                l is down
+  Internet protocol processing disabled
+GigabitEthernet0/0 is administratively down, line protocol is dow                                n
+  Internet protocol processing disabled
+GigabitEthernet0/1 is up, line protocol is up
+  Internet protocol processing disabled
+Serial0/0/0 is administratively down, line protocol is down
+  Internet protocol processing disabled
+Serial0/0/1 is up, line protocol is up
+  Internet protocol processing disabled
+R1#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile,                                 B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter                                 area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external ty                                pe 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS                                -IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user                                 static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l                                 - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+R1#show ip ?
+  access-lists            List IP access lists
+  accounting              The active IP accounting database
+  admission               Network Admission Control information
+  aliases                 IP alias table
+  arp                     IP ARP table
+  as-path-access-list     List AS path access lists
+  auth-proxy              Authentication Proxy information
+  bgp                     BGP information
+  cache                   IP fast-switching route cache
+  cef                     Cisco Express Forwarding
+  community-list          List community-list
+  ddns                    Dynamic DNS
+  device                  Show IP Tracking Hosts
+  dhcp                    Show items in the DHCP database
+  dns                     Show DNS information
+  dns-cache               Show addresses in DNS cache
+  drp                     Director response protocol
+  eigrp                   Show IPv4 EIGRP
+  extcommunity-list       List extended-community list
+  flow                    NetFlow switching
+  helper-address          helper-address table
+  host-list               Host list
+  http                    HTTP information
+  icmp                    ICMP information
+  igmp                    IGMP information
+  inspect                 CBAC (Context Based Access Control) information
+  interface               IP interface status and configuration
+  ips                     IPS (Intrusion Prevention System) information
+  irdp                    ICMP Router Discovery Protocol
+  lisp                    Locator/ID Separation Protocol
+  local                   IP local options
+  masks                   Masks associated with a network
+  mfib                    IP multicast forwarding information base
+  mrib                    Multicast Routing Information Base
+  mrm                     IP Multicast Routing Monitor information
+  mroute                  IP multicast routing table
+  msdp                    Multicast Source Discovery Protocol (MSDP)
+  multicast               Multicast global information
+  nat                     IP NAT information
+  nbar                    Network-Based Application Recognition
+  nhrp                    NHRP information
+  ospf                    OSPF information
+  pgm                     PGM Reliable Transport Protocol
+  pim                     PIM information
+  policy                  Policy routing
+  policy-list             List IP Policy list
+  port-map                Port to Application Mapping (PAM) information
+  prefix-list             List IP prefix lists
+  protocols               IP routing protocol process parameters and statistics
+  redirects               IP redirects
+  rib                     Routing Information Base
+  rip                     IP RIP show commands
+  route                   IP routing table
+  rpf                     Display RPF information for multicast source
+  rsvp                    RSVP information
+  rtp                     RTP/UDP/IP header-compression statistics
+  sap                     Session Announcement Protocol cache
+  sdee                    SDEE (Security Device Event Exchange) information
+  sla                     Service Level Agreement (SLA)
+  snat                    IP NAT SNAT information
+  ssh                     Information on SSH
+  static                  Static operation
+  tcp                     TCP/IP header-compression statistics
+  traffic                 IP protocol statistics
+  traffic-export          Show ip traffic-export statistics
+  trigger-authentication  Trigger-authentication host table
+  trm                     TRM (Trend Registration Module) information
+  urlfilter               IOS URL Filtering Information
+  virtual-reassembly      IP Virtual Fragment Reassembly (VFR) information
+  vrf                     VPN Routing/Forwarding instance information
+  wccp                    WCCP information
+
+R1#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+R1#
+R1#show ip6 route
+          ^
+% Invalid input detected at '^' marker.
+
+R1#show ipv6 route
+IPv6 Routing Table - default - 6 entries
+Codes: C - Connected, L - Local, S - Static, U - Per-user Static route
+       B - BGP, R - RIP, I1 - ISIS L1, I2 - ISIS L2
+       IA - ISIS interarea, IS - ISIS summary, D - EIGRP, EX - EIGRP external
+       ND - Neighbor Discovery, l - LISP
+       O - OSPF Intra, OI - OSPF Inter, OE1 - OSPF ext 1, OE2 - OSPF ext 2
+       ON1 - OSPF NSSA ext 1, ON2 - OSPF NSSA ext 2
+C   2001:DB8:ACAD:A::/64 [0/0]
+     via GigabitEthernet0/1, directly connected
+L   2001:DB8:ACAD:A:BA38:61FF:FE92:F821/128 [0/0]
+     via GigabitEthernet0/1, receive
+S   2001:DB8:ACAD:B::/64 [1/0]
+     via FC00::2
+C   FC00::/64 [0/0]
+     via Serial0/0/1, directly connected
+L   FC00::1/128 [0/0]
+     via Serial0/0/1, receive
+L   FF00::/8 [0/0]
+     via Null0, receive
+R1#config ter
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#ipv6 route 2001:DB8:ACDA:B::/64 FC00::2
+R1(config)#no ipv6 route 2001:DB8:ACDA:B::/64 FC00::2
+R1(config)#ip route ::/0 serial 0/0/1
+                    ^
+% Invalid input detected at '^' marker.
+
+R1(config)#ipv6 route ::/0 serial 0/0/1
+R1(config)#exit
+R1#sho
+Mar  6 01:20:23.899: %SYS-5-CONFIG_I: Configured from console by console
+% Type "show ?" for a list of subcommands
+R1#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+R1#show ipv6 route
+IPv6 Routing Table - default - 7 entries
+Codes: C - Connected, L - Local, S - Static, U - Per-user Static route
+       B - BGP, R - RIP, I1 - ISIS L1, I2 - ISIS L2
+       IA - ISIS interarea, IS - ISIS summary, D - EIGRP, EX - EIGRP external
+       ND - Neighbor Discovery, l - LISP
+       O - OSPF Intra, OI - OSPF Inter, OE1 - OSPF ext 1, OE2 - OSPF ext 2
+       ON1 - OSPF NSSA ext 1, ON2 - OSPF NSSA ext 2
+S   ::/0 [1/0]
+     via Serial0/0/1, directly connected
+C   2001:DB8:ACAD:A::/64 [0/0]
+     via GigabitEthernet0/1, directly connected
+L   2001:DB8:ACAD:A:BA38:61FF:FE92:F821/128 [0/0]
+     via GigabitEthernet0/1, receive
+S   2001:DB8:ACAD:B::/64 [1/0]
+     via FC00::2
+C   FC00::/64 [0/0]
+     via Serial0/0/1, directly connected
+L   FC00::1/128 [0/0]
+     via Serial0/0/1, receive
+L   FF00::/8 [0/0]
+     via Null0, receive
+R1#
+
+
+
+

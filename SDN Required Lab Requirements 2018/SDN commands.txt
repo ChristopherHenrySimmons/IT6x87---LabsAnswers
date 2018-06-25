@@ -1,0 +1,112 @@
+>>>LAB01>>>
+>>>actions in this exercise are done as "root"
+sudo bash
+>>>Ensure that no other controller is present
+killall controller
+>>>Clear all mininet components
+mn -c
+>>>Change to the ryu direction, and Start the Ryu controller
+cd /home/sdn/ryu
+ryu-manager --verbose ./simple_switch_13.py
+>>>Start mininet with 3 hosts connected to 1 switch
+mn --topo=tree,1,3 --mac --controller=remote --switch ovsk,protocols=OpenFlow13
+>>>Dump flows on switch s1 A flow is the finest work unit of a switch. In Mininet, dpctl is a command that allows visibility and control over a single switch's flow table. It is especially useful for debugging, by viewing flow state and flow counters.
+dpctl dump-flows -O OpenFlow13
+>>>Start a ping from host h1 to host h2
+h1 ping h2
+>>>Dump flows again to view differences.
+dpctl dump-flows -O OpenFlow13
+>>>Stop the current Mininet simulation
+exit
+>>>Start a new simulation with a few more hosts (10 hosts, 1 switch)
+mn --topo=tree,1,10 --mac --controller=remote --switch ovsk,protocols=OpenFlow13
+>>>Dump flows again to view differences.
+dpctl dump-flows -O OpenFlow13
+>>>Ping from host h1 to host h2 again
+h1 ping h2
+>>>Dump flows again to view differences.
+dpctl dump-flows -O OpenFlow13
+>>>Ping all hosts
+pingall
+>>>Dump flows again to view differences.
+dpctl dump-flows -O OpenFlow13
+>>>Starting iperf between hosts
+iperf
+>>>Dump flows to see the flows which match
+dpctl dump-flows -O OpenFlow13
+>>>LAB02>>>
+>>>Stop the Mininet environment
+quit
+>>>Change to your 'home' folder:
+cd /home/
+>>>Is there already an sdn folder?
+ls
+>>>If there is no folder called 'sdn' (usually shown in purple by the ls command above) then create one
+mkdir sdn
+>>>Change into the sdn folder
+cd sdn
+>>>is there already a valve folder?
+ls
+>>>If there is no folder called 'valve' (usually shown in purple by the ls command above) then get the latest versions of the files we need for this tutorial, and install software for reading ymal files:
+git clone https://github.com/openvapour/valve
+git clone http://CosSte@git.pcsupport.ac.nz/CosSte/valve-src
+cp valve-src/* valve
+pip install pyyaml
+>>>Change into the valve folder, and check the files we need are all there
+cd valve
+valve# ls -l
+>>>Check that you are in the directory containing the Valve software
+cd /home/sdn/valve/
+>>>Look at the first Valve config file
+cat valve.yaml-flat
+>>>Copy the config file into valve.yaml
+cp valve.yaml-flat  valve.yaml
+>>>Start Ryu and the Valve controller
+ryu-manager --verbose ./valve.py
+>>>Start Mininet We'll now start the Mininet environment with 10 hosts once more.  Watch the 'EVENT's in the Controller window as Mininet starts.
+mn --topo=tree,1,10 --mac --controller=remote --switch ovsk,protocols=OpenFlow13
+>>>Dump flows
+dpctl dump-flows -O OpenFlow13
+>>>Ping between two hosts 
+h1 ping h2
+>>>Dump flows again to view differences. 
+dpctl dump-flows -O OpenFlow13
+>>>Ping all
+pingall
+>>>Look at the Single VLAN Valve config file
+>>>Use <CTRL-C> to shutdown ryu
+>>>In the Mininet window
+>>>Use exit to shutdown Mininet
+>>>in the Controller window
+cat valve.yaml-vlan
+>>>Put the vlan file in place, and run valve using this config:
+cp valve.yaml-vlan valve.yaml
+ryu-manager --verbose ./valve.py
+>>>Start Mininet, using the '-vlan' configuration:
+mn --topo=tree,1,10 --mac --controller=remote --switch ovsk,protocols=OpenFlow13
+>>>Dump flows again to view differences.
+dpctl  dump-flows  -O  OpenFlow13
+>>>Ping all
+pingall
+>>>Look at the Multiple Switch Valve config file
+cat valve.yaml-multiple
+>>>Put the vlan file in place, and run valve using this config:
+cp valve.yaml-multiple valve.yaml
+ryu-manager --verbose ./valve.py
+>>>Start Mininet, using the '-vlan' configuration:
+mn --topo=tree,3,2 --mac --controller=remote --switch ovsk,protocols=OpenFlow13
+>>>Dump flows again to view differences.  You will see a separate list of flows for each switch.
+dpctl  dump-flows  -O  OpenFlow13
+>>>Ping all
+pingall
+>>>Dump flows rules again.
+dpctl  dump-flows  -O  OpenFlow13
+>>>LAB03>>>
+>>>In the Controller terminal, we are going to run the Floodlight controller:
+sudo bash
+cd /home/sdn/
+java -jar target/floodlight.jar
+>>>You can check that your controller is running by observing messages in the Controller terminal, and browsing to your controller: mininet-XXXXXX:8080/ui/pages/topology.html
+sudo bash
+wireshark &
+>>>In the Mininet terminal, start Wireshark.  Remember the ampersand (shift of '7' key) after the command name:
